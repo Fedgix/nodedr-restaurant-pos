@@ -1,0 +1,44 @@
+$ jest --runInBand payroll-cross-month
+FAIL src/modules/hr/payroll-cross-month.spec.ts
+  ● Fedgix payroll regression › pays two complete months at two monthly salaries
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 62000
+    Received: 65321.43
+
+      4 |   it('pays two complete months at two monthly salaries', () => {
+      5 |     const [line] = computePayroll('2026-02-01', '2026-03-31', 0, [{ userId: 'a', payType: 'MONTHLY', rate: 31000, hoursWorked: 0, unpaidLeaveDays: 0 }]);
+    > 6 |     expect(line.basePay).toBe(62000);
+        |                          ^
+      7 |   });
+      8 |   it('never produces negative salary for excessive unpaid leave', () => {
+      9 |     const [line] = computePayroll('2026-02-01', '2026-02-02', 0, [{ userId: 'a', payType: 'MONTHLY', rate: 28000, hoursWorked: 0, unpaidLeaveDays: 4 }]);
+
+      at Object.<anonymous> (modules/hr/payroll-cross-month.spec.ts:6:26)
+
+  ● Fedgix payroll regression › never produces negative salary for excessive unpaid leave
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 0
+    Received:    -2000
+
+       8 |   it('never produces negative salary for excessive unpaid leave', () => {
+       9 |     const [line] = computePayroll('2026-02-01', '2026-02-02', 0, [{ userId: 'a', payType: 'MONTHLY', rate: 28000, hoursWorked: 0, unpaidLeaveDays: 4 }]);
+    > 10 |     expect(line.netPay).toBeGreaterThanOrEqual(0);
+         |                         ^
+      11 |   });
+      12 | });
+      13 |
+
+      at Object.<anonymous> (modules/hr/payroll-cross-month.spec.ts:10:25)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 2 total
+Snapshots:   0 total
+Time:        0.372 s, estimated 1 s
+Ran all test suites matching payroll-cross-month.
+/workspace/scratch/89230eab16a0/fedgix-restaurant-os/apps/backend:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @nodedr-restaurant/backend@0.0.1 test: `jest --runInBand payroll-cross-month`
+Exit status 1

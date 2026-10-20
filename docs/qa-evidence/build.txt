@@ -1,0 +1,99 @@
+Scope: all 4 workspace projects
+? Verifying lockfile against supply-chain policies (1317 entries)...
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +112 -113
++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+Progress: resolved 112, reused 112, downloaded 0, added 112, done
+✓ Lockfile passes supply-chain policies (1317 entries in 11.7s)
+
+Done in 12.4s using pnpm v11.25.0
+$ turbo run build
+• turbo 2.10.9
+
+   • Packages in scope: @nodedr-restaurant/backend, @nodedr-restaurant/types, web
+   • Running build in 3 packages
+   • Remote caching disabled
+
+@nodedr-restaurant/types:build: cache miss, executing 9607e87a1befc2e3
+@nodedr-restaurant/types:build: $ tsc -p tsconfig.json
+web:build: cache miss, executing 8db4a0f10884bfe5
+@nodedr-restaurant/backend:build: cache miss, executing db2a5dbf7fb2c9ab
+@nodedr-restaurant/backend:build: $ nest build
+web:build: $ next build --webpack
+web:build: ▲ Next.js 16.3.8 (webpack)
+web:build: ✓ Running next.config.ts took 18ms
+web:build: 
+web:build:   Creating an optimized production build ...
+web:build: ✓ Compiled successfully in 20.7s
+web:build:   Running TypeScript ...
+web:build:   Finished TypeScript in 7.3s ...
+web:build:   Collecting page data using 8 workers ...
+web:build:   Generating static pages using 8 workers (0/45) ...
+web:build:   Generating static pages using 8 workers (11/45) 
+web:build:   Generating static pages using 8 workers (22/45) 
+web:build:   Generating static pages using 8 workers (33/45) 
+web:build: ✓ Generating static pages using 8 workers (45/45) in 936ms
+web:build:   Finalizing page optimization ...
+web:build:   Collecting build traces ...
+web:build: 
+web:build: Route (app)
+web:build: ┌ ○ /
+web:build: ├ ○ /_not-found
+web:build: ├ ○ /accounting
+web:build: ├ ○ /apple-icon.png
+web:build: ├ ○ /attendance
+web:build: ├ ○ /customer-display
+web:build: ├ ○ /customers
+web:build: ├ ƒ /customers/[id]
+web:build: ├ ○ /dashboard
+web:build: ├ ○ /delivery
+web:build: ├ ƒ /dine/[branchId]
+web:build: ├ ○ /docs
+web:build: ├ ○ /docs/accessibility
+web:build: ├ ○ /docs/api
+web:build: ├ ○ /docs/compliance-india
+web:build: ├ ○ /icon.png
+web:build: ├ ○ /inventory
+web:build: ├ ○ /inventory/procurement
+web:build: ├ ○ /inventory/purchase-orders
+web:build: ├ ƒ /inventory/purchase-orders/[id]
+web:build: ├ ○ /inventory/suppliers
+web:build: ├ ○ /inventory/transfers
+web:build: ├ ○ /inventory/waste
+web:build: ├ ○ /kds
+web:build: ├ ƒ /kiosk/[token]
+web:build: ├ ƒ /kiosk/[token]/manifest.webmanifest
+web:build: ├ ƒ /kiosk/sw.js
+web:build: ├ ○ /login
+web:build: ├ ○ /marketing
+web:build: ├ ○ /menu
+web:build: ├ ○ /my-pay
+web:build: ├ ○ /operations
+web:build: ├ ƒ /order/[qrToken]
+web:build: ├ ○ /orders
+web:build: ├ ○ /pos
+web:build: ├ ○ /reports
+web:build: ├ ○ /reservations
+web:build: ├ ○ /settings
+web:build: ├ ○ /settings/api-keys
+web:build: ├ ○ /settings/audit-log
+web:build: ├ ○ /settings/backup
+web:build: ├ ○ /settings/roles
+web:build: ├ ○ /settings/security
+web:build: ├ ○ /settings/staff
+web:build: ├ ○ /settings/updates
+web:build: ├ ○ /settings/webhooks
+web:build: ├ ○ /signup
+web:build: ├ ○ /tables
+web:build: └ ○ /team
+web:build: 
+web:build: 
+web:build: ○  (Static)   prerendered as static content
+web:build: ƒ  (Dynamic)  server-rendered on demand
+web:build: 
+
+ Tasks:    3 successful, 3 total
+Cached:    0 cached, 3 total
+  Time:    59.96s 
+

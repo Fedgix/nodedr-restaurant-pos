@@ -1,0 +1,116 @@
+$ turbo run test
+• turbo 2.10.9
+
+   • Packages in scope: @nodedr-restaurant/backend, @nodedr-restaurant/types, web
+   • Running test in 3 packages
+   • Remote caching disabled
+
+@nodedr-restaurant/types:build: cache hit, replaying logs 4c7c5f6473c46ecf
+@nodedr-restaurant/types:build: $ tsc -p tsconfig.json
+web:test: cache miss, executing 7d2c85f31ed2dea3
+@nodedr-restaurant/backend:test: cache miss, executing b877f24abde7ae65
+@nodedr-restaurant/backend:test: $ jest
+web:test: $ node --test --no-warnings lib/*.test.ts
+web:test: ✔ a blank entry pays the whole balance (1.527225ms)
+web:test: ✔ cash above the balance becomes change (0.215926ms)
+web:test: ✔ a smaller amount is a part payment with the rest still due (0.309687ms)
+web:test: ✔ card and UPI cannot be over-tendered: capped, and flagged (0.135525ms)
+web:test: ✔ zero, negative or junk is not recordable while money is owed (0.133622ms)
+web:test: ✔ a bill already covered (points / gift card) needs no payment (0.244659ms)
+web:test: ✔ cents survive float arithmetic (0.11918ms)
+web:test: ✔ discount shows percentage and amount together (0.137668ms)
+web:test: ✔ money input parsing (0.328827ms)
+web:test: ✔ still loading is never reported as no branch (1.075123ms)
+web:test: ✔ a failed request is an error, not no branch (0.200122ms)
+web:test: ✔ only a loaded, empty list is no branch (0.155144ms)
+web:test: ✔ any branch means ready, even while refetching or after an error (0.148544ms)
+web:test: ✔ a chosen station survives a reload on the same device (1.94789ms)
+web:test: ✔ each branch keeps its own station and never leaks into another (0.21188ms)
+web:test: ✔ choosing All stations clears the saved value (0.166041ms)
+web:test: ✔ blocked or missing storage is reported, not thrown (4.15433ms)
+web:test: ✔ a saved station is not trusted until the station list has loaded (0.351891ms)
+web:test: ✔ a saved station that still exists is applied (0.255185ms)
+web:test: ✔ a deleted station falls back to all stations and is flagged (0.197649ms)
+web:test: ✔ if the station list cannot load, the saved station is used instead of a blank board (0.389077ms)
+web:test: ✔ same item + same options merges into one line; different options do not (1.048883ms)
+web:test: ✔ modifier order does not create a second line (1.273742ms)
+web:test: ✔ quantity changes are bounded and reaching zero removes the line (1.024105ms)
+web:test: ✔ totals round to cents without floating-point drift (0.202746ms)
+web:test: ✔ EXCLUSIVE menus gross up by tax, INCLUSIVE (Spain IVA default) does not (0.162505ms)
+web:test: ✔ removing unavailable items drops every line of that item (0.262116ms)
+web:test: ✔ order payload carries only ids and quantities, never prices (0.181443ms)
+web:test: ✔ welcome -> service -> menu, and the service step is skipped when only one is configured (1.479002ms)
+web:test: ✔ cannot reach review with an empty basket (0.251129ms)
+web:test: ✔ double-submit guard: a second SUBMIT_START while pending changes nothing (0.627947ms)
+web:test: ✔ retry after a network failure re-sends the same idempotency key (0.255004ms)
+web:test: ✔ after an ambiguous failure the basket is locked (no edits, no leaving review) (0.266262ms)
+web:test: ✔ a definite rejection (validation) unlocks editing and mints a new key (0.27168ms)
+web:test: ✔ success shows the confirmation, clears the basket, and keeps no key (1.221444ms)
+web:test: ✔ unavailable items are removed, the customer is told, and the flow returns to the menu (0.706706ms)
+web:test: ✔ RESET leaves nothing of the previous guest behind (0.286052ms)
+web:test: ✔ escapes HTML in restaurant and item names (21.511144ms)
+web:test: ✔ is laid out for 80 mm paper and formats money for the locale/currency (0.751825ms)
+web:test: ✔ never claims the order is paid and omits a zero tax row (0.43055ms)
+web:test: ✔ items typed for Table 1 do not follow the user to Table 2 (1.718343ms)
+web:test: ✔ switching back restores each table's own draft (0.269717ms)
+web:test: ✔ a cart built before picking a table is carried onto it (0.232951ms)
+web:test: ✔ a carried cart merges with, and never overwrites, an existing draft (0.182084ms)
+web:test: ✔ same table is a no-op and does not mutate its inputs (0.247313ms)
+web:test: ✔ clearDraft drops only the sent table (0.151188ms)
+web:test: ✔ order and table pushes refresh the per-table open bill cache (0.795871ms)
+web:test: ✔ order pushes refresh the kitchen screen (incoming orders, cancelled/declined tickets) (0.14581ms)
+web:test: ✔ kitchen pushes refresh the kitchen screen (0.156867ms)
+web:test: ✔ every subscribed event maps to at least one cache (0.56982ms)
+web:test: ✔ dashboard needs dashboard.sales.view, including sub-paths (0.999979ms)
+web:test: ✔ default waiter: menu, tables, POS — not the dashboard (0.253793ms)
+web:test: ✔ only the four default roles open the dashboard (0.975442ms)
+web:test: ✔ kitchen staff are sent to the KDS, not the dashboard (0.18576ms)
+web:test: ✔ a manage permission implies its view permission (0.192962ms)
+web:test: ✔ round-trips the order QR payload the kiosk ticket prints (2.13343ms)
+web:test: ✔ tolerates the CR/LF and whitespace a keyboard-wedge scanner appends (0.282286ms)
+web:test: ✔ recognises a table QR url (0.246962ms)
+web:test: ✔ rejects empty, oversized and unknown payloads instead of guessing (0.249266ms)
+web:test: ℹ tests 59
+web:test: ℹ suites 0
+web:test: ℹ pass 59
+web:test: ℹ fail 0
+web:test: ℹ cancelled 0
+web:test: ℹ skipped 0
+web:test: ℹ todo 0
+web:test: ℹ duration_ms 377.336212
+@nodedr-restaurant/backend:test: PASS src/modules/orders/escpos-receipt.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/orders/order-lifecycle.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/reservations/reservations.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/orders/settlement.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/delivery/delivery.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/common/guards/permissions-policy.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/accounting/ledger.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/app.controller.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/orders/escpos-network.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/webhooks/net-guard.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/orders/escpos/encoder.spec.ts
+@nodedr-restaurant/backend:test: PASS src/auth/two-factor.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/marketing/discounts.spec.ts
+@nodedr-restaurant/backend:test: PASS src/auth/totp.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/inventory/stock-plan.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/reports/csv.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/accounting/accounting.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/hr/payroll-cross-month.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/webhooks/signing.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/operations/operations.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/accounting/accounting.calc.spec.ts
+@nodedr-restaurant/backend:test: PASS src/common/time.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/hr/payroll.calc.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/public/public-kiosk.service.spec.ts
+@nodedr-restaurant/backend:test: PASS src/modules/reports/report-schedules.service.spec.ts
+@nodedr-restaurant/backend:test: 
+@nodedr-restaurant/backend:test: Test Suites: 25 passed, 25 total
+@nodedr-restaurant/backend:test: Tests:       194 passed, 194 total
+@nodedr-restaurant/backend:test: Snapshots:   0 total
+@nodedr-restaurant/backend:test: Time:        2.164 s
+@nodedr-restaurant/backend:test: Ran all test suites.
+
+ Tasks:    3 successful, 3 total
+Cached:    1 cached, 3 total
+  Time:    3.201s 
+

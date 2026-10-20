@@ -11,6 +11,8 @@ export interface PayInput {
   hoursWorked: number;
   /** Approved UNPAID leave days that fall inside the period. */
   unpaidLeaveDays: number;
+  /** Exact dates support correct cross-month leave proration. */
+  unpaidLeaveDates?: string[];
 }
 
 export interface PayLineResult {
@@ -34,9 +36,8 @@ export function daysInMonthOf(date: string): number {
 }
 
 /**
- * MONTHLY staff earn rate x (period days / days in the period's first
- * month), so a full calendar month pays exactly the rate. UNPAID leave
- * deducts a day's pay (rate / days in month) per day. HOURLY staff earn
+ * MONTHLY staff earn a fraction of the rate for each calendar day using
+ * that day's month length. Exact unpaid dates use the same day basis. HOURLY staff earn
  * rate x clocked hours and have no leave deduction (unpaid by nature).
  *
  * The tip pool is split in proportion to hours worked; the last recipient
@@ -48,7 +49,22 @@ export function computePayroll(
   tipPool: number,
   staff: PayInput[],
 ): PayLineResult[] {
-  const periodDays = daysInclusive(periodStart, periodEnd);
+  const start = Date.parse(`${periodStart}T00:00:00Z`);
+  const end = Date.parse(`${periodEnd}T00:00:00Z`);
+  if (
+    !Number.isFinite(start) ||
+    !Number.isFinite(end) ||
+    end < start ||
+    daysInclusive(periodStart, periodEnd) > 366
+  )
+    throw new Error('Payroll period must contain 1 to 366 valid days');
+  const dates: string[] = [];
+  for (let t = start; t <= end; t += 86_400_000)
+    dates.push(new Date(t).toISOString().slice(0, 10));
+  const monthlyFraction = dates.reduce(
+    (sum, d) => sum + 1 / daysInMonthOf(d),
+    0,
+  );
   const monthDays = daysInMonthOf(periodStart);
   const totalHours = staff.reduce((s, p) => s + p.hoursWorked, 0);
 
@@ -73,8 +89,13 @@ export function computePayroll(
     if (p.payType === 'HOURLY') {
       basePay = round2(p.rate * p.hoursWorked);
     } else {
-      basePay = round2((p.rate * periodDays) / monthDays);
-      deduction = round2((p.rate / monthDays) * p.unpaidLeaveDays);
+      basePay = round2(p.rate * monthlyFraction);
+      const unpaidFraction = p.unpaidLeaveDates
+        ? [...new Set(p.unpaidLeaveDates)]
+            .filter((d) => d >= periodStart && d <= periodEnd)
+            .reduce((sum, d) => sum + 1 / daysInMonthOf(d), 0)
+        : p.unpaidLeaveDays / monthDays;
+      deduction = Math.min(basePay, round2(p.rate * unpaidFraction));
     }
     const tipShare = tips.get(p.userId) ?? 0;
     return {

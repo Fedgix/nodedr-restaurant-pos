@@ -1,0 +1,87 @@
+SETUP app initialized
+SETUP owner registered
+SETUP staff 1
+SETUP staff 2
+SETUP staff 3
+SETUP staff 4
+SETUP staff 5
+SETUP staff 6
+SETUP staff 7
+SETUP staff 8
+SETUP staff 9
+SETUP staff 10
+SETUP staff 11
+SETUP staff 12
+SETUP staff 13
+SETUP staff 14
+SETUP staff 15
+SETUP staff 16
+SETUP staff 17
+SETUP staff 18
+SETUP staff 19
+SETUP staff 20
+PASS C01 Standard reservation
+PASS C02 Reservation plus scheduled collection preorder
+PASS C03 Reservation without preorder
+PASS C04 Walk-in table order
+PASS C05 Customer arrives 30 minutes late
+PASS C06 Early arrival
+PASS C07 Additional items after seating
+PASS C08 Cancel one unprepared item
+PASS C09 Cancel entire order
+PASS C10 Customer cancels own reservation
+PASS C12 Requested table transfer performed by waiter
+PASS C13 Split-tender bill settlement
+PASS C14 Partial payment then balance
+PASS C15 Invalid payment and retry
+PASS C16 Refund recorded by manager
+PASS C17 Customer takeaway and private history
+FAIL C18 Expected values to be strictly equal:
++ actual - expected
+
++ undefined
+- 'QA no peanuts; severe allergy'
+
+PASS C19 Repeat customer multiple orders
+PASS C20 Missing/delayed item investigated
+PASS S01 Waiter takes order
+PASS S02 Waiter modifies order
+PASS S03 Kitchen marks ready
+PASS S04 Kitchen inspects delayed queue
+PASS S05 Cashier bills and records test payment
+PASS S06 Manager applies authorized discount
+PASS S07 Manager refunds a bill
+PASS S08 Employee clocks in
+PASS S09 Employee clocks out
+PASS S10 Employee requests leave
+PASS S11 Manager approves leave
+PASS S12 Overlapping leave blocked
+PASS S13 Manager creates staff shift
+PASS S14 Unauthorized payroll access blocked
+PASS S15 Payroll administrator drafts and finalizes
+PASS S16 Manager retrieves salary statement
+PASS S17 Inventory receives supplier delivery
+PASS S18 Inventory records wastage
+PASS S19 Daily cash closing
+PASS S20 Owner reviews live dashboard
+PASS R-owner owner reviewer permissions
+PASS R-manager manager reviewer permissions
+PASS R-finance finance reviewer permissions
+PASS R-operations operations reviewer permissions
+PASS R-qa qa reviewer permissions
+PASS N01 Customer cannot read another history
+PASS N02 Duplicate customer order idempotency
+PASS N03 Invalid quantities rejected
+PASS N04 Duplicate clock-ins blocked
+PASS N05 Other employee salary statement blocked
+PASS N06 Reservation overlap and terminal state blocked
+PASS N07 Cancelling reservation preserves unpaid order table
+PASS N08 Invalid calendar leave rejected
+PASS N09 Expired customer session rejected
+PASS N10 Retried partial payment is not duplicated
+PASS N11 Invalid stock withdrawal rejected
+FAIL N12 Expected values to be strictly equal:
+
+240 !== 300
+
+SUMMARY {"VERIFIED":49,"PARTIALLY VERIFIED":5,"NOT IMPLEMENTED":1,"FAILED":2}

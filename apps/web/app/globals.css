@@ -51,6 +51,8 @@
 }
 
 :root {
+  --font-geist-sans: "Arial", "Helvetica Neue", sans-serif;
+  --font-geist-mono: "Consolas", monospace;
   /* Nodedr OrderRestro — light palette. See DESIGN_SYSTEM.md for rationale
      (wine/burgundy primary is the one deliberate accent choice). */
   --background: #FBF9F8;

@@ -1,3 +1,13 @@
+# Fedgix Restaurant OS
+
+Customized AGPL-3.0 fork of Nodedr OrderRestro by NodeDR Infotech / Raktim Ranjit. Upstream documentation is retained below.
+
+Work branch: `fedgix/development`. Read [Final implementation report](docs/FINAL_IMPLEMENTATION_REPORT.md), [verified feature matrix](docs/FEATURE_MATRIX.md), [QA report](docs/FINAL_QA_REPORT.md), [open issues](docs/OPEN_ISSUES.md) and [deployment guide](docs/DEPLOYMENT_GUIDE.md). Client documents are in [client-deliverables](client-deliverables/).
+
+Use `docker-compose.fedgix.yml` for this fork, not upstream auto-update images. Development/demo evidence is not production acceptance. No QA accounts or synthetic transactions belong in a business database. All modifications remain subject to the retained [AGPL license](LICENSE).
+
+---
+
 <div align="center">
 
 <img src="apps/web/public/brand-lockup.png" alt="Nodedr OrderRestro" width="520">

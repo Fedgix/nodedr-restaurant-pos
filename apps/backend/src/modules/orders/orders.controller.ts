@@ -484,8 +484,8 @@ export class OrdersController {
     @CurrentUser() user: SessionUser,
     @Query('branchId') branchId?: string,
   ) {
-    const lpDevices = await probeCharDevices();
-    const libusbPrinter = findPrinterDescriptor();
+    let lpDevices: Awaited<ReturnType<typeof probeCharDevices>> = [];
+    let libusbPrinter: ReturnType<typeof findPrinterDescriptor> = null;
     let network: {
       host: string;
       port: number;
@@ -506,6 +506,19 @@ export class OrdersController {
             port: target.printerPort,
           })),
         };
+      }
+    }
+    // Network-only installations must not fail because libusb is unavailable.
+    if (connection === 'USB') {
+      try {
+        lpDevices = await probeCharDevices();
+      } catch {
+        /* no accessible USB nodes */
+      }
+      try {
+        libusbPrinter = findPrinterDescriptor();
+      } catch {
+        /* no accessible USB bus */
       }
     }
     const canPrint =

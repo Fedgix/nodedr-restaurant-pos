@@ -26,18 +26,29 @@ export class AttendanceService {
   async clockIn(userId: string, branchId: string, note?: string) {
     if (await this.current(userId))
       throw new BadRequestException('Already clocked in');
-    return this.prisma.attendance.create({
-      data: { userId, branchId, note },
-      include: WITH_USER,
+    return this.prisma.$transaction(async (tx) => {
+      await tx.$queryRaw`SELECT id FROM users WHERE id = ${userId} FOR UPDATE`;
+      if (
+        await tx.attendance.findFirst({ where: { userId, clockOutAt: null } })
+      )
+        throw new BadRequestException('Already clocked in');
+      return tx.attendance.create({
+        data: { userId, branchId, note },
+        include: WITH_USER,
+      });
     });
   }
 
   async clockOut(userId: string, note?: string) {
     const open = await this.current(userId);
     if (!open) throw new BadRequestException('Not clocked in');
-    return this.prisma.attendance.update({
-      where: { id: open.id },
+    const changed = await this.prisma.attendance.updateMany({
+      where: { id: open.id, clockOutAt: null },
       data: { clockOutAt: new Date(), ...(note ? { note } : {}) },
+    });
+    if (!changed.count) throw new BadRequestException('Not clocked in');
+    return this.prisma.attendance.findUniqueOrThrow({
+      where: { id: open.id },
       include: WITH_USER,
     });
   }

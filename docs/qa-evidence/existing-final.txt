@@ -1,0 +1,58 @@
+$ ts-node prisma/seed.ts
+Seeding permissions...
+Creating demo restaurant + branch...
+Seeding roles...
+Creating demo owner user (login: owner@demo.local / password: Password123!)...
+Seeding floor + tables...
+Seeding kitchen stations + menu...
+Seeding takeaway demo orders...
+Seed complete.
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/app.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-app.json
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.291 s, estimated 3 s
+Ran all test suites within paths "test/app.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-app.json
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/permissions.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-permissions.json
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        7.348 s
+Ran all test suites within paths "test/permissions.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-permissions.json
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/branches.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-branches.json
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        4.242 s, estimated 5 s
+Ran all test suites within paths "test/branches.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-branches.json
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/inventory-stock.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-inventory-stock.json
+Test Suites: 1 passed, 1 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        3.722 s
+Ran all test suites within paths "test/inventory-stock.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-inventory-stock.json
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/kiosk.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-kiosk.json
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        2.743 s
+Ran all test suites within paths "test/kiosk.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-kiosk.json
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/order-flow.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-order-flow.json
+Test Suites: 1 passed, 1 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        7.845 s
+Ran all test suites within paths "test/order-flow.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-order-flow.json
+$ jest --config ./test/jest-e2e.json --runInBand --testTimeout=120000 --runTestsByPath test/orders-lifecycle.e2e-spec.ts --json --outputFile=../../docs/qa-evidence/existing-orders-lifecycle.json
+Test Suites: 1 passed, 1 total
+Tests:       24 passed, 24 total
+Snapshots:   0 total
+Time:        6.486 s, estimated 7 s
+Ran all test suites within paths "test/orders-lifecycle.e2e-spec.ts".
+Test results written to: ../../docs/qa-evidence/existing-orders-lifecycle.json

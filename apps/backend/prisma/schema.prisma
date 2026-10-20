@@ -49,6 +49,10 @@ model Restaurant {
   // white-label self-hosted software, so the operator's brand should lead;
   // the product name stays as a small credit line instead (see BrandFooter).
   logoUrl   String?
+  brandColor String @default("#0066CC")
+  fontFamily String @default("system")
+  websiteHeadline String?
+  heroImageUrl String?
   currency  String  @default("INR")
   timezone  String  @default("Asia/Kolkata")
 
@@ -78,6 +82,7 @@ model Restaurant {
 }
 
 model Branch {
+  customerPortalEnabled Boolean @default(false)
   id               String            @id @default(cuid())
   restaurantId     String
   restaurant       Restaurant        @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
@@ -1168,6 +1173,8 @@ model Customer {
 
   createdAt DateTime   @default(now())
   orders    Order[]
+  account   CustomerAccount?
+  reservations Reservation[]
   giftCards GiftCard[]
 
   @@index([branchId, phone])
@@ -1512,6 +1519,8 @@ enum ReservationStatus {
 }
 
 model Reservation {
+  customerId String?
+  customer Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
   id       String @id @default(cuid())
   branchId String
   branch   Branch @relation(fields: [branchId], references: [id], onDelete: Cascade)
@@ -2171,4 +2180,27 @@ model ReportSchedule {
 
   @@index([branchId])
   @@map("report_schedules")
+}
+
+// Fedgix customer identities never share staff roles or staff session cookies.
+model CustomerAccount {
+  id String @id @default(cuid())
+  branchId String
+  customerId String @unique
+  customer Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  email String
+  passwordHash String
+  createdAt DateTime @default(now())
+  sessions CustomerSession[]
+  @@unique([branchId, email])
+  @@map("customer_accounts")
+}
+model CustomerSession {
+  id String @id @default(cuid())
+  tokenHash String @unique
+  accountId String
+  account CustomerAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  @@index([expiresAt])
+  @@map("customer_sessions")
 }

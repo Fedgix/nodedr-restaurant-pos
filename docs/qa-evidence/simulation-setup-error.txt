@@ -1,0 +1,4 @@
+Error: Web server did not start
+    at module.exports (/workspace/scratch/89230eab16a0/fedgix-restaurant-os/scripts/qa-browser.cjs:7:145)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async /workspace/scratch/89230eab16a0/fedgix-restaurant-os/scripts/qa-simulate.cjs:133:35

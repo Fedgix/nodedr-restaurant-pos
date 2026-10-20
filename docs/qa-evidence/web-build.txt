@@ -1,0 +1,15 @@
+$ next build
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 33ms
+
+  Creating an optimized production build ...
+
+> Build error occurred
+[Error: Failed to open database
+
+Caused by:
+    0: Loading persistence directory failed
+    1: invalid digit found in string]
+/workspace/scratch/89230eab16a0/fedgix-restaurant-os/apps/web:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] web@0.1.0 build: `next build`
+Exit status 1

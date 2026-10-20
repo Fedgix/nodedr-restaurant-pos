@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ConflictException,
   Injectable,
   Logger,
   NotFoundException,
@@ -19,6 +20,7 @@ export interface CreateReservationOptions {
   // creating a reservation from the dashboard are never capped — they can
   // always merge tables or make a judgment call the online flow can't.
   fromWebsite?: boolean;
+  customerId?: string;
 }
 
 @Injectable()
@@ -82,10 +84,34 @@ export class ReservationsService {
       : false;
 
     const created = await this.prisma.$transaction(async (tx) => {
+      if (dto.tableId) {
+        await tx.$queryRaw`SELECT id FROM tables WHERE id = ${dto.tableId} FOR UPDATE`;
+        const endsAt = new Date(
+          new Date(dto.reservedAt).getTime() + dto.durationMinutes * 60_000,
+        );
+        const candidates = await tx.reservation.findMany({
+          where: {
+            tableId: dto.tableId,
+            status: { in: ['RESERVED', 'CONFIRMED', 'ARRIVED'] },
+            reservedAt: { lt: endsAt },
+          },
+        });
+        if (
+          candidates.some(
+            (r) =>
+              r.reservedAt.getTime() + r.durationMinutes * 60_000 >
+              new Date(dto.reservedAt).getTime(),
+          )
+        )
+          throw new ConflictException(
+            'This table is already reserved during that time',
+          );
+      }
       const reservation = await tx.reservation.create({
         data: {
           ...dto,
           branchId,
+          customerId: options.customerId,
           ...(options.fromWebsite ? { channel: 'ONLINE' as const } : {}),
           ...(autoConfirm ? { status: 'CONFIRMED' as const } : {}),
         },
@@ -93,8 +119,8 @@ export class ReservationsService {
       // Holding a table for a reservation marks it RESERVED on the floor
       // view immediately, not just when the guest physically arrives.
       if (reservation.tableId) {
-        await tx.table.update({
-          where: { id: reservation.tableId },
+        await tx.table.updateMany({
+          where: { id: reservation.tableId, status: 'AVAILABLE' },
           data: { status: 'RESERVED', statusSince: new Date() },
         });
       }
@@ -188,6 +214,21 @@ export class ReservationsService {
     if (!reservation) throw new NotFoundException('Reservation not found');
 
     const updated = await this.prisma.$transaction(async (tx) => {
+      await tx.$queryRaw`SELECT id FROM reservations WHERE id = ${id} FOR UPDATE`;
+      const current = await tx.reservation.findUniqueOrThrow({ where: { id } });
+      const next: Record<string, string[]> = {
+        RESERVED: ['CONFIRMED', 'ARRIVED', 'CANCELLED', 'NO_SHOW'],
+        CONFIRMED: ['ARRIVED', 'CANCELLED', 'NO_SHOW'],
+        ARRIVED: ['COMPLETED', 'CANCELLED'],
+        COMPLETED: [],
+        CANCELLED: [],
+        NO_SHOW: [],
+      };
+      if (current.status === status) return current;
+      if (!next[current.status].includes(status))
+        throw new ConflictException('Reservation cannot move to that status');
+      if (current.tableId)
+        await tx.$queryRaw`SELECT id FROM tables WHERE id = ${current.tableId} FOR UPDATE`;
       const result = await tx.reservation.update({
         where: { id },
         data: { status },
@@ -209,9 +250,32 @@ export class ReservationsService {
           status === 'CANCELLED' ||
           status === 'NO_SHOW'
         ) {
-          await tx.table.update({
-            where: { id: result.tableId },
-            data: { status: 'AVAILABLE', statusSince: new Date() },
+          const openOrder = await tx.order.count({
+            where: {
+              tableId: result.tableId,
+              status: { in: ['OPEN', 'BILLED'] },
+            },
+          });
+          const otherBooking = await tx.reservation.count({
+            where: {
+              tableId: result.tableId,
+              id: { not: id },
+              status: { in: ['RESERVED', 'CONFIRMED', 'ARRIVED'] },
+            },
+          });
+          await tx.table.updateMany({
+            where: {
+              id: result.tableId,
+              status: { notIn: ['CLEANING', 'OUT_OF_SERVICE'] },
+            },
+            data: {
+              status: openOrder
+                ? 'OCCUPIED'
+                : otherBooking
+                  ? 'RESERVED'
+                  : 'AVAILABLE',
+              statusSince: new Date(),
+            },
           });
         }
       }

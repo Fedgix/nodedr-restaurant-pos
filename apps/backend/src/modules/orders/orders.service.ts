@@ -307,9 +307,11 @@ export class OrdersService {
       }
     }
 
-    const orderNumber = await this.nextOrderNumber(branchId);
-
     const order = await this.prisma.$transaction(async (tx) => {
+      // Allocate daily numbers under the branch lock, so simultaneous tills
+      // cannot read the same previous number before either insert commits.
+      await tx.$queryRaw`SELECT id FROM branches WHERE id = ${branchId} FOR UPDATE`;
+      const orderNumber = await this.nextOrderNumber(branchId, tx);
       const created = await tx.order.create({
         data: {
           branchId,
@@ -492,6 +494,15 @@ export class OrdersService {
     );
 
     const updated = await this.prisma.$transaction(async (tx) => {
+      await tx.$queryRaw`SELECT id FROM orders WHERE id = ${orderId} FOR UPDATE`;
+      const current = await tx.order.findFirst({
+        where: { id: orderId, branchId },
+        include: { items: true, payments: { select: { id: true } } },
+      });
+      if (!current) throw new NotFoundException('Order not found');
+      this.assertNoPayments(current);
+      if (current.status !== 'OPEN')
+        throw new BadRequestException('Order is not open — cannot add items');
       const newItems = await Promise.all(
         lineInputs.map((line) =>
           tx.orderItem.create({
@@ -516,7 +527,10 @@ export class OrdersService {
         ),
       );
 
-      const allLines = [...order.items, ...newItems].map((item) =>
+      const allLines = [
+        ...current.items.filter((i) => i.status !== 'CANCELLED'),
+        ...newItems,
+      ].map((item) =>
         priceLine({
           quantity: item.quantity,
           unitPriceInclusive: Number(item.lineTotal) / item.quantity,
@@ -2071,16 +2085,20 @@ export class OrdersService {
   // count collides with an existing number as soon as any earlier order of the
   // day has been deleted (orders.delete), and that surfaced as a 409 on the
   // unique (branchId, orderNumber) index.
-  private async nextOrderNumber(branchId: string): Promise<string> {
+  private async nextOrderNumber(
+    branchId: string,
+    tx: Prisma.TransactionClient,
+  ): Promise<string> {
     const datePart = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    const latest = await this.prisma.order.findFirst({
+    const rows = await tx.order.findMany({
       where: { branchId, orderNumber: { startsWith: `${datePart}-` } },
-      orderBy: { orderNumber: 'desc' },
       select: { orderNumber: true },
     });
-    const last = latest ? Number(latest.orderNumber.split('-')[1]) : 0;
-    const next = (Number.isFinite(last) ? last : 0) + 1;
-    return `${datePart}-${String(next).padStart(4, '0')}`;
+    const last = rows.reduce(
+      (max, r) => Math.max(max, Number(r.orderNumber.split('-')[1]) || 0),
+      0,
+    );
+    return `${datePart}-${String(last + 1).padStart(4, '0')}`;
   }
 
   /**

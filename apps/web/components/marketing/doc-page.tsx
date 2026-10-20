@@ -17,27 +17,44 @@ export function DocPage({
         <div className="mx-auto flex max-w-3xl items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
             <Logo size={26} />
-            <span className="text-sm font-semibold text-foreground">OrderRestro</span>
+            <span className="text-sm font-semibold text-foreground">
+              Fedgix Restaurant OS
+            </span>
           </Link>
-          <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            href="/"
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
             &larr; Back to home
           </Link>
         </div>
       </header>
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-14 sm:px-6">
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground">{title}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Last updated {updated}</p>
+        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+          {title}
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Last updated {updated}
+        </p>
         <div className="mt-10 flex flex-col gap-10">{children}</div>
       </main>
     </div>
   );
 }
 
-export function DocSection({ heading, children }: { heading: string; children: ReactNode }) {
+export function DocSection({
+  heading,
+  children,
+}: {
+  heading: string;
+  children: ReactNode;
+}) {
   return (
     <section>
-      <h2 className="text-xl font-semibold tracking-tight text-foreground">{heading}</h2>
+      <h2 className="text-xl font-semibold tracking-tight text-foreground">
+        {heading}
+      </h2>
       <div className="mt-3 flex flex-col gap-3 text-[15px] leading-relaxed text-muted-foreground">
         {children}
       </div>

@@ -31,6 +31,36 @@ export class HrService {
       throw new BadRequestException('That staff member is not in this branch');
   }
 
+  payslips(userId: string) {
+    return this.prisma.payrollLine.findMany({
+      where: { userId, run: { status: 'FINALIZED' } },
+      include: {
+        run: {
+          select: {
+            branchId: true,
+            periodStart: true,
+            periodEnd: true,
+            status: true,
+          },
+        },
+      },
+      orderBy: { run: { periodEnd: 'desc' } },
+      take: 50,
+    });
+  }
+  async payslip(branchId: string, runId: string, userId: string) {
+    const line = await this.prisma.payrollLine.findFirst({
+      where: { runId, userId, run: { branchId, status: 'FINALIZED' } },
+      include: {
+        user: USER,
+        run: { select: { periodStart: true, periodEnd: true, status: true } },
+      },
+    });
+    if (!line)
+      throw new NotFoundException('Finalized salary statement not found');
+    return line;
+  }
+
   // --- Shifts --------------------------------------------------------------
 
   async listShifts(
@@ -107,15 +137,31 @@ export class HrService {
 
   async requestLeave(userId: string, dto: LeaveRequestDto) {
     await this.assertStaffInBranch(dto.branchId, userId);
-    return this.prisma.leaveRequest.create({
-      data: {
-        branchId: dto.branchId,
-        userId,
-        type: dto.type,
-        startDate: dayStart(dto.startDate),
-        endDate: dayStart(dto.endDate),
-        reason: dto.reason,
-      },
+    return this.prisma.$transaction(async (tx) => {
+      // Serialize requests for the same employee, including cross-branch requests.
+      await tx.$queryRaw`SELECT id FROM users WHERE id = ${userId} FOR UPDATE`;
+      const overlap = await tx.leaveRequest.findFirst({
+        where: {
+          userId,
+          status: { in: ['PENDING', 'APPROVED'] },
+          startDate: { lte: dayStart(dto.endDate) },
+          endDate: { gte: dayStart(dto.startDate) },
+        },
+      });
+      if (overlap)
+        throw new BadRequestException(
+          'An active leave request already covers these dates',
+        );
+      return tx.leaveRequest.create({
+        data: {
+          branchId: dto.branchId,
+          userId,
+          type: dto.type,
+          startDate: dayStart(dto.startDate),
+          endDate: dayStart(dto.endDate),
+          reason: dto.reason,
+        },
+      });
     });
   }
 
@@ -155,10 +201,12 @@ export class HrService {
     if (!leave) throw new NotFoundException('Leave request not found');
     if (leave.status !== 'PENDING')
       throw new BadRequestException('Already decided');
-    return this.prisma.leaveRequest.update({
-      where: { id },
+    const changed = await this.prisma.leaveRequest.updateMany({
+      where: { id, branchId, status: 'PENDING' },
       data: { status, decidedById: deciderId, decidedAt: new Date() },
     });
+    if (!changed.count) throw new BadRequestException('Already decided');
+    return this.prisma.leaveRequest.findUniqueOrThrow({ where: { id } });
   }
 
   // --- Pay profiles --------------------------------------------------------
@@ -263,17 +311,14 @@ export class HrService {
         endDate: { gte: from },
       },
     });
-    const unpaidDays = new Map<string, number>();
+    const unpaidDates = new Map<string, Set<string>>();
     for (const l of leaves) {
       const s = Math.max(l.startDate.getTime(), from.getTime());
       const e = Math.min(l.endDate.getTime(), dayStart(periodEnd).getTime());
-      if (e >= s)
-        unpaidDays.set(
-          l.userId,
-          (unpaidDays.get(l.userId) ?? 0) +
-            Math.round((e - s) / 86_400_000) +
-            1,
-        );
+      const dates = unpaidDates.get(l.userId) ?? new Set<string>();
+      for (let t = s; t <= e; t += 86_400_000)
+        dates.add(new Date(t).toISOString().slice(0, 10));
+      unpaidDates.set(l.userId, dates);
     }
 
     const tips = await this.prisma.order.aggregate({
@@ -291,7 +336,8 @@ export class HrService {
         payType: l.user.payProfile!.payType,
         rate: Number(l.user.payProfile!.rate),
         hoursWorked: hours.get(l.user.id) ?? 0,
-        unpaidLeaveDays: unpaidDays.get(l.user.id) ?? 0,
+        unpaidLeaveDays: unpaidDates.get(l.user.id)?.size ?? 0,
+        unpaidLeaveDates: [...(unpaidDates.get(l.user.id) ?? [])],
       })),
     );
 

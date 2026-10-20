@@ -18,7 +18,7 @@ import { UserMenu } from "./user-menu";
 
 // The restaurant's own logo + name lead the sidebar header — this is
 // white-label self-hosted software, so the operator's branding takes the
-// prime spot an operator actually looks at. The Nodedr OrderRestro product
+// prime spot an operator actually looks at. The Fedgix Restaurant OS product
 // mark moves to a small credit line at the bottom (BrandFooter) instead of
 // competing with it up here. Falls back to the product mark only until the
 // restaurant sets its own logo/name under Settings.
@@ -47,7 +47,7 @@ function RestaurantBrand() {
     <>
       <Logo />
       <span className="truncate text-sm font-semibold tracking-tight text-sidebar-foreground">
-        {restaurant?.name ?? "Nodedr OrderRestro"}
+        {restaurant?.name ?? "Fedgix Restaurant OS"}
       </span>
     </>
   );
@@ -112,7 +112,9 @@ export function AppShell({
             <UserMenu user={user} />
           </div>
         </header>
-        <main className="flex-1 overflow-y-auto p-4 pb-24 sm:p-6 sm:pb-24 lg:p-8">{children}</main>
+        <main className="flex-1 overflow-y-auto p-4 pb-24 sm:p-6 sm:pb-24 lg:p-8">
+          {children}
+        </main>
         <EntityDialogHost />
       </div>
       <MobileBottomNav user={user} onMore={() => setMobileOpen(true)} />

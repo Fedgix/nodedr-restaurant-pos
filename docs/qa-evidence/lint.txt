@@ -1,0 +1,12 @@
+
+/workspace/scratch/89230eab16a0/fedgix-restaurant-os/apps/web/app/dine/[branchId]/page.tsx
+  207:15  warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element')
+  207:72  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  243:13  warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element')
+  243:70  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  326:27  warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element')
+  326:84  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 6 problems (0 errors, 6 warnings)
+  0 errors and 3 warnings potentially fixable with the `--fix` option.
+

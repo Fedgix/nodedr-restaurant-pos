@@ -1,0 +1,7 @@
+$ jest --runInBand reservations.service payroll
+
+Test Suites: 3 passed, 3 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        0.669 s, estimated 2 s
+Ran all test suites matching reservations.service|payroll.

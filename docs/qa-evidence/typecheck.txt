@@ -1,0 +1,20 @@
+$ turbo run typecheck
+• turbo 2.10.9
+
+   • Packages in scope: @nodedr-restaurant/backend, @nodedr-restaurant/types, web
+   • Running typecheck in 3 packages
+   • Remote caching disabled
+
+@nodedr-restaurant/types:typecheck: cache miss, executing 29bee2e177bd579e
+@nodedr-restaurant/types:build: cache hit, replaying logs 4c7c5f6473c46ecf
+@nodedr-restaurant/types:build: $ tsc -p tsconfig.json
+web:typecheck: cache miss, executing 90542d302da7f4ad
+@nodedr-restaurant/backend:typecheck: cache miss, executing 656d1c7574b13bc4
+@nodedr-restaurant/types:typecheck: $ tsc --noEmit
+@nodedr-restaurant/backend:typecheck: $ tsc --noEmit
+web:typecheck: $ tsc --noEmit
+
+ Tasks:    4 successful, 4 total
+Cached:    1 cached, 4 total
+  Time:    10.824s 
+

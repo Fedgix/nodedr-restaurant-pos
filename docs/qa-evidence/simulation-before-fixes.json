@@ -1,0 +1,805 @@
+{
+  "method": "Automated API requests through real NestJS, Prisma and isolated PGlite; single database connection; functional throttling bypassed for fixture volume",
+  "personas": {
+    "customers": [
+      {
+        "id": "QA-CUST-001",
+        "email": "qa-cust-001@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-002",
+        "email": "qa-cust-002@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-003",
+        "email": "qa-cust-003@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-004",
+        "email": "qa-cust-004@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-005",
+        "email": "qa-cust-005@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-006",
+        "email": "qa-cust-006@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-007",
+        "email": "qa-cust-007@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-008",
+        "email": "qa-cust-008@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-009",
+        "email": "qa-cust-009@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-010",
+        "email": "qa-cust-010@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-011",
+        "email": "qa-cust-011@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-012",
+        "email": "qa-cust-012@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-013",
+        "email": "qa-cust-013@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-014",
+        "email": "qa-cust-014@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-015",
+        "email": "qa-cust-015@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-016",
+        "email": "qa-cust-016@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-017",
+        "email": "qa-cust-017@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-018",
+        "email": "qa-cust-018@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-019",
+        "email": "qa-cust-019@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      },
+      {
+        "id": "QA-CUST-020",
+        "email": "qa-cust-020@example.invalid",
+        "contact": "Synthetic .invalid email; no messages sent"
+      }
+    ],
+    "staff": [
+      {
+        "id": "QA-STAFF-001",
+        "email": "qa-staff-001@example.invalid",
+        "role": "WAITER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "tables.view",
+          "menu.view",
+          "bills.print"
+        ]
+      },
+      {
+        "id": "QA-STAFF-002",
+        "email": "qa-staff-002@example.invalid",
+        "role": "WAITER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "tables.view",
+          "menu.view",
+          "bills.print"
+        ]
+      },
+      {
+        "id": "QA-STAFF-003",
+        "email": "qa-staff-003@example.invalid",
+        "role": "WAITER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "tables.view",
+          "menu.view",
+          "bills.print"
+        ]
+      },
+      {
+        "id": "QA-STAFF-004",
+        "email": "qa-staff-004@example.invalid",
+        "role": "WAITER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "tables.view",
+          "menu.view",
+          "bills.print"
+        ]
+      },
+      {
+        "id": "QA-STAFF-005",
+        "email": "qa-staff-005@example.invalid",
+        "role": "WAITER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "tables.view",
+          "menu.view",
+          "bills.print"
+        ]
+      },
+      {
+        "id": "QA-STAFF-006",
+        "email": "qa-staff-006@example.invalid",
+        "role": "KITCHEN_STAFF",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "kds.manage",
+          "orders.accept"
+        ]
+      },
+      {
+        "id": "QA-STAFF-007",
+        "email": "qa-staff-007@example.invalid",
+        "role": "KITCHEN_STAFF",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "kds.manage",
+          "orders.accept"
+        ]
+      },
+      {
+        "id": "QA-STAFF-008",
+        "email": "qa-staff-008@example.invalid",
+        "role": "CHEF",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "kds.manage",
+          "orders.accept",
+          "menu.manage",
+          "menu.view"
+        ]
+      },
+      {
+        "id": "QA-STAFF-009",
+        "email": "qa-staff-009@example.invalid",
+        "role": "CASHIER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "bills.print",
+          "discounts.apply",
+          "sales.view",
+          "customers.manage",
+          "dashboard.sales.view",
+          "menu.view",
+          "tables.view"
+        ]
+      },
+      {
+        "id": "QA-STAFF-010",
+        "email": "qa-staff-010@example.invalid",
+        "role": "CASHIER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.edit",
+          "orders.accept",
+          "bills.print",
+          "discounts.apply",
+          "sales.view",
+          "customers.manage",
+          "dashboard.sales.view",
+          "menu.view",
+          "tables.view"
+        ]
+      },
+      {
+        "id": "QA-STAFF-011",
+        "email": "qa-staff-011@example.invalid",
+        "role": "QA_SUPERVISOR",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "kds.manage",
+          "reservations.manage",
+          "menu.view",
+          "tables.view",
+          "orders.accept",
+          "orders.edit",
+          "orders.create"
+        ]
+      },
+      {
+        "id": "QA-STAFF-012",
+        "email": "qa-staff-012@example.invalid",
+        "role": "RESTAURANT_MANAGER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "sales.view",
+          "orders.create",
+          "orders.edit",
+          "orders.cancel",
+          "orders.accept",
+          "discounts.apply",
+          "bills.print",
+          "tables.manage",
+          "tables.view",
+          "menu.manage",
+          "menu.view",
+          "inventory.manage",
+          "reports.access",
+          "kds.manage",
+          "reservations.manage",
+          "customers.manage",
+          "refunds.process",
+          "attendance.manage",
+          "delivery.manage",
+          "staff.manage",
+          "accounting.manage",
+          "marketing.manage",
+          "operations.manage"
+        ]
+      },
+      {
+        "id": "QA-STAFF-013",
+        "email": "qa-staff-013@example.invalid",
+        "role": "RESTAURANT_MANAGER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "sales.view",
+          "orders.create",
+          "orders.edit",
+          "orders.cancel",
+          "orders.accept",
+          "discounts.apply",
+          "bills.print",
+          "tables.manage",
+          "tables.view",
+          "menu.manage",
+          "menu.view",
+          "inventory.manage",
+          "reports.access",
+          "kds.manage",
+          "reservations.manage",
+          "customers.manage",
+          "refunds.process",
+          "attendance.manage",
+          "delivery.manage",
+          "staff.manage",
+          "accounting.manage",
+          "marketing.manage",
+          "operations.manage"
+        ]
+      },
+      {
+        "id": "QA-STAFF-014",
+        "email": "qa-staff-014@example.invalid",
+        "role": "INVENTORY_MANAGER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "inventory.manage",
+          "reports.access"
+        ]
+      },
+      {
+        "id": "QA-STAFF-015",
+        "email": "qa-staff-015@example.invalid",
+        "role": "INVENTORY_MANAGER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "inventory.manage",
+          "reports.access"
+        ]
+      },
+      {
+        "id": "QA-STAFF-016",
+        "email": "qa-staff-016@example.invalid",
+        "role": "QA_HR",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "attendance.manage",
+          "staff.manage"
+        ]
+      },
+      {
+        "id": "QA-STAFF-017",
+        "email": "qa-staff-017@example.invalid",
+        "role": "QA_HR",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "attendance.manage",
+          "staff.manage"
+        ]
+      },
+      {
+        "id": "QA-STAFF-018",
+        "email": "qa-staff-018@example.invalid",
+        "role": "ACCOUNTANT",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "sales.view",
+          "dashboard.sales.view",
+          "reports.access",
+          "reports.financial.view",
+          "data.export",
+          "accounting.manage"
+        ]
+      },
+      {
+        "id": "QA-STAFF-019",
+        "email": "qa-staff-019@example.invalid",
+        "role": "BARTENDER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "orders.create",
+          "orders.accept",
+          "kds.manage",
+          "menu.view",
+          "tables.view"
+        ]
+      },
+      {
+        "id": "QA-STAFF-020",
+        "email": "qa-staff-020@example.invalid",
+        "role": "OWNER",
+        "shift": "09:00–17:00 Asia/Kolkata (QA fixture)",
+        "permissions": [
+          "sales.view",
+          "dashboard.sales.view",
+          "orders.create",
+          "orders.edit",
+          "orders.cancel",
+          "orders.accept",
+          "discounts.apply",
+          "refunds.process",
+          "orders.delete",
+          "bills.print",
+          "tables.view",
+          "tables.manage",
+          "menu.view",
+          "menu.manage",
+          "inventory.manage",
+          "reports.access",
+          "users.manage",
+          "reports.financial.view",
+          "data.export",
+          "kds.manage",
+          "reservations.manage",
+          "settings.manage",
+          "customers.manage",
+          "audit_log.view",
+          "roles.manage",
+          "backup.manage",
+          "attendance.manage",
+          "delivery.manage",
+          "staff.manage",
+          "accounting.manage",
+          "marketing.manage",
+          "operations.manage",
+          "system.update"
+        ]
+      }
+    ],
+    "reviewers": [
+      {
+        "id": "QA-REVIEW-OWNER",
+        "role": "OWNER",
+        "email": "qa-review-owner@example.invalid",
+        "permissions": [
+          "sales.view",
+          "dashboard.sales.view",
+          "orders.create",
+          "orders.edit",
+          "orders.cancel",
+          "orders.accept",
+          "discounts.apply",
+          "refunds.process",
+          "orders.delete",
+          "bills.print",
+          "tables.view",
+          "tables.manage",
+          "menu.view",
+          "menu.manage",
+          "inventory.manage",
+          "reports.access",
+          "users.manage",
+          "reports.financial.view",
+          "data.export",
+          "kds.manage",
+          "reservations.manage",
+          "settings.manage",
+          "customers.manage",
+          "audit_log.view",
+          "roles.manage",
+          "backup.manage",
+          "attendance.manage",
+          "delivery.manage",
+          "staff.manage",
+          "accounting.manage",
+          "marketing.manage",
+          "operations.manage",
+          "system.update"
+        ]
+      },
+      {
+        "id": "QA-REVIEW-MANAGER",
+        "role": "RESTAURANT_MANAGER",
+        "email": "qa-review-manager@example.invalid",
+        "permissions": [
+          "sales.view",
+          "orders.create",
+          "orders.edit",
+          "orders.cancel",
+          "orders.accept",
+          "discounts.apply",
+          "bills.print",
+          "tables.manage",
+          "tables.view",
+          "menu.manage",
+          "menu.view",
+          "inventory.manage",
+          "reports.access",
+          "kds.manage",
+          "reservations.manage",
+          "customers.manage",
+          "refunds.process",
+          "attendance.manage",
+          "delivery.manage",
+          "staff.manage",
+          "accounting.manage",
+          "marketing.manage",
+          "operations.manage"
+        ]
+      },
+      {
+        "id": "QA-REVIEW-FINANCE",
+        "role": "QA_FINANCE_REVIEW",
+        "email": "qa-review-finance@example.invalid",
+        "permissions": [
+          "accounting.manage",
+          "data.export",
+          "reports.financial.view",
+          "reports.access",
+          "sales.view",
+          "dashboard.sales.view"
+        ]
+      },
+      {
+        "id": "QA-REVIEW-OPERATIONS",
+        "role": "QA_OPERATIONS_REVIEW",
+        "email": "qa-review-operations@example.invalid",
+        "permissions": [
+          "reports.access",
+          "attendance.manage",
+          "inventory.manage",
+          "kds.manage",
+          "reservations.manage",
+          "tables.view"
+        ]
+      },
+      {
+        "id": "QA-REVIEW-QA",
+        "role": "QA_REVIEW",
+        "email": "qa-review-qa@example.invalid",
+        "permissions": [
+          "reports.access",
+          "kds.manage",
+          "menu.view",
+          "tables.view"
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "C01",
+      "title": "Standard reservation",
+      "role": "QA-CUST-001",
+      "status": "VERIFIED",
+      "actual": {
+        "reservationId": "cmvg37lfr00avs10hs23beh93",
+        "status": "RESERVED"
+      },
+      "durationMs": 1151
+    },
+    {
+      "id": "C02",
+      "title": "Reservation plus scheduled collection preorder",
+      "role": "QA-CUST-002",
+      "status": "PARTIALLY VERIFIED",
+      "actual": "Booking and scheduled collection order created independently; reservation-linked meal package is not implemented",
+      "durationMs": 3352
+    },
+    {
+      "id": "C03",
+      "title": "Reservation without preorder",
+      "role": "QA-CUST-003",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 839
+    },
+    {
+      "id": "C04",
+      "title": "Walk-in table order",
+      "role": "QA-CUST-004",
+      "status": "VERIFIED",
+      "actual": {
+        "orderId": "cmvg37pmn00cas10hwzye7ayp",
+        "stockAfter": "99.8"
+      },
+      "durationMs": 8323
+    },
+    {
+      "id": "C05",
+      "title": "Customer arrives 30 minutes late",
+      "role": "QA-CUST-005",
+      "status": "PARTIALLY VERIFIED",
+      "actual": "Manual late-arrival handling works; automatic grace-period policy is not implemented",
+      "durationMs": 1579
+    },
+    {
+      "id": "C06",
+      "title": "Early arrival",
+      "role": "QA-CUST-006",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 1199
+    },
+    {
+      "id": "C07",
+      "title": "Additional items after seating",
+      "role": "QA-CUST-007",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3520
+    },
+    {
+      "id": "C08",
+      "title": "Cancel one unprepared item",
+      "role": "QA-CUST-008",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3764
+    },
+    {
+      "id": "C09",
+      "title": "Cancel entire order",
+      "role": "QA-CUST-009",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3116
+    },
+    {
+      "id": "C10",
+      "title": "Customer cancels own reservation",
+      "role": "QA-CUST-010",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 1206
+    },
+    {
+      "id": "C11",
+      "title": "Customer changes reservation party size",
+      "role": "QA-CUST-011",
+      "status": "NOT IMPLEMENTED",
+      "actual": "No party-size update workflow; contact restaurant and cancel/rebook. Persona exists and can sign in.",
+      "durationMs": 0
+    },
+    {
+      "id": "C12",
+      "title": "Requested table transfer performed by waiter",
+      "role": "QA-CUST-012",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3188
+    },
+    {
+      "id": "C13",
+      "title": "Split-tender bill settlement",
+      "role": "QA-CUST-013",
+      "status": "PARTIALLY VERIFIED",
+      "actual": "Split tender verified; separate per-person invoices not implemented",
+      "durationMs": 3365
+    },
+    {
+      "id": "C14",
+      "title": "Partial payment then balance",
+      "role": "QA-CUST-014",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 4710
+    },
+    {
+      "id": "C15",
+      "title": "Invalid payment and retry",
+      "role": "QA-CUST-015",
+      "status": "PARTIALLY VERIFIED",
+      "actual": "Short payment rejected and manual retry recorded; live card decline is not integrated",
+      "durationMs": 4440
+    },
+    {
+      "id": "C16",
+      "title": "Refund recorded by manager",
+      "role": "QA-CUST-016",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 4126
+    },
+    {
+      "id": "C17",
+      "title": "Customer takeaway and private history",
+      "role": "QA-CUST-017",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 8405
+    },
+    {
+      "id": "C18",
+      "title": "Dietary instructions persist",
+      "role": "QA-CUST-018",
+      "status": "FAILED",
+      "actual": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'QA no peanuts; severe allergy'\n",
+      "durationMs": 1906
+    },
+    {
+      "id": "C19",
+      "title": "Repeat customer multiple orders",
+      "role": "QA-CUST-019",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3091
+    },
+    {
+      "id": "C20",
+      "title": "Missing/delayed item investigated",
+      "role": "QA-CUST-020",
+      "status": "PARTIALLY VERIFIED",
+      "actual": "Manager delay alert verified; dedicated customer missing-item complaint flow not implemented",
+      "durationMs": 3527
+    },
+    {
+      "id": "S01",
+      "title": "Waiter takes order",
+      "role": "QA-STAFF-001",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 1548
+    },
+    {
+      "id": "S02",
+      "title": "Waiter modifies order",
+      "role": "QA-STAFF-002",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 2120
+    },
+    {
+      "id": "S03",
+      "title": "Kitchen marks ready",
+      "role": "QA-STAFF-006",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 4408
+    },
+    {
+      "id": "S04",
+      "title": "Kitchen inspects delayed queue",
+      "role": "QA-STAFF-007",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 849
+    },
+    {
+      "id": "S05",
+      "title": "Cashier bills and records test payment",
+      "role": "QA-STAFF-009",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 4070
+    },
+    {
+      "id": "S06",
+      "title": "Manager applies authorized discount",
+      "role": "QA-STAFF-012",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3539
+    },
+    {
+      "id": "S07",
+      "title": "Manager refunds a bill",
+      "role": "QA-STAFF-013",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 3978
+    },
+    {
+      "id": "S08",
+      "title": "Employee clocks in",
+      "role": "QA-STAFF-003",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 883
+    },
+    {
+      "id": "S09",
+      "title": "Employee clocks out",
+      "role": "QA-STAFF-003",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 527
+    },
+    {
+      "id": "S10",
+      "title": "Employee requests leave",
+      "role": "QA-STAFF-004",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 530
+    },
+    {
+      "id": "S11",
+      "title": "Manager approves leave",
+      "role": "QA-STAFF-012",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 578
+    },
+    {
+      "id": "S12",
+      "title": "Overlapping leave blocked",
+      "role": "QA-STAFF-004",
+      "status": "VERIFIED",
+      "actual": "Assertions passed",
+      "durationMs": 439
+    }
+  ]
+}

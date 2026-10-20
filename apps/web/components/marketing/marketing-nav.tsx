@@ -22,7 +22,7 @@ export function MarketingNav() {
         <Link href="/" className="flex items-center gap-2.5">
           <Logo size={30} />
           <span className="text-[15px] font-semibold tracking-tight text-foreground">
-            OrderRestro
+            Fedgix Restaurant OS
           </span>
         </Link>
 
@@ -46,10 +46,18 @@ export function MarketingNav() {
             <Github className="size-4" />
             GitHub
           </a>
-          <Button variant="ghost" size="default" render={<Link href="/login" />}>
+          <Button
+            variant="ghost"
+            size="default"
+            render={<Link href="/login" />}
+          >
             Sign in
           </Button>
-          <Button variant="default" size="default" render={<Link href="/signup" />}>
+          <Button
+            variant="default"
+            size="default"
+            render={<Link href="/signup" />}
+          >
             Get started free
           </Button>
         </div>

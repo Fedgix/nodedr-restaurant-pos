@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Delete,
+  ForbiddenException,
   Get,
   Param,
   Patch,
@@ -12,6 +13,7 @@ import {
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import {
+  permissionSatisfied,
   leaveDecisionSchema,
   leaveRequestSchema,
   payrollRunSchema,
@@ -40,6 +42,28 @@ export class HrController {
 
   private access(u: SessionUser, branchId: string) {
     return this.branchAccess.assertAccess(u.restaurantId, branchId);
+  }
+
+  @Auth()
+  @Get('payslips/mine')
+  myPayslips(@CurrentUser() u: SessionUser) {
+    return this.hr.payslips(u.id);
+  }
+
+  @Auth()
+  @Get('payroll/:id/payslip/:userId')
+  async payslip(
+    @CurrentUser() u: SessionUser,
+    @Query('branchId') branchId: string,
+    @Param('id') id: string,
+    @Param('userId') userId: string,
+  ) {
+    await this.access(u, branchId);
+    if (userId !== u.id && !permissionSatisfied(u.permissions, 'staff.manage'))
+      throw new ForbiddenException(
+        'You can only view your own salary statement',
+      );
+    return this.hr.payslip(branchId, id, userId);
   }
 
   // --- Shifts ---

@@ -40,11 +40,15 @@ export default function LoginPage() {
           return;
         }
         if (err instanceof ApiError && err.status >= 500) {
-          setError("The server is having a problem right now. Please try again in a minute.");
+          setError(
+            "The server is having a problem right now. Please try again in a minute.",
+          );
         } else if (err instanceof ApiError) {
           setError(err.message);
         } else {
-          setError("Can't reach the server. Check your internet connection and try again.");
+          setError(
+            "Can't reach the server. Check your internet connection and try again.",
+          );
         }
       },
     });
@@ -67,9 +71,11 @@ export default function LoginPage() {
             <Logo size={44} />
           </Link>
           <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-            Nodedr OrderRestro
+            Fedgix Restaurant OS
           </h1>
-          <p className="text-sm text-muted-foreground">Sign in to manage your restaurant</p>
+          <p className="text-sm text-muted-foreground">
+            Sign in to manage your restaurant
+          </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
@@ -98,7 +104,7 @@ export default function LoginPage() {
             <Label htmlFor="password">Password</Label>
             <PasswordInput
               id="password"
-              
+
               autoComplete="current-password"
               enterKeyHint="go"
               className="h-11"
@@ -106,7 +112,9 @@ export default function LoginPage() {
               {...register("password")}
             />
             {errors.password && (
-              <p className="text-xs text-destructive">{errors.password.message}</p>
+              <p className="text-xs text-destructive">
+                {errors.password.message}
+              </p>
             )}
           </div>
 
@@ -124,7 +132,11 @@ export default function LoginPage() {
               <p className="text-xs text-muted-foreground">
                 Open your authenticator app, or use one of your recovery codes.
               </p>
-              {errors.totp && <p className="text-xs text-destructive">{errors.totp.message}</p>}
+              {errors.totp && (
+                <p className="text-xs text-destructive">
+                  {errors.totp.message}
+                </p>
+              )}
             </div>
           )}
 
@@ -138,14 +150,21 @@ export default function LoginPage() {
             </div>
           )}
 
-          <Button type="submit" className="mt-2 h-12 text-base" disabled={login.isPending}>
+          <Button
+            type="submit"
+            className="mt-2 h-12 text-base"
+            disabled={login.isPending}
+          >
             {login.isPending ? "Signing in…" : "Sign in"}
           </Button>
         </form>
 
         <p className="mt-8 text-center text-xs text-muted-foreground">
           New restaurant?{" "}
-          <Link href="/signup" className="font-medium text-foreground hover:underline">
+          <Link
+            href="/signup"
+            className="font-medium text-foreground hover:underline"
+          >
             Create an account
           </Link>
         </p>

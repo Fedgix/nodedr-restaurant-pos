@@ -1,13 +1,13 @@
 {
-  "name": "nodedr-orderrestro",
+  "name": "fedgix-restaurant-os",
   "private": true,
   "version": "0.1.0",
-  "description": "Nodedr OrderRestro — offline-first Restaurant Management System",
+  "description": "Fedgix Restaurant OS \u2014 customized AGPL restaurant operating system based on Nodedr OrderRestro",
   "author": "Raktim Ranjit <mail@raktimranjit.com> (https://github.com/Raktim94)",
   "license": "AGPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Raktim94/nodedr-restaurant-pos.git"
+    "url": "https://github.com/Fedgix/nodedr-restaurant-pos.git"
   },
   "bugs": {
     "url": "https://github.com/Raktim94/nodedr-restaurant-pos/issues"
@@ -35,9 +35,15 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
-    "build-windows-msix": "pwsh -NoProfile -File windows/msix/build-windows-msix.ps1 && pwsh -NoProfile -File windows/msix/validate-msix.ps1"
+    "build-windows-msix": "pwsh -NoProfile -File windows/msix/build-windows-msix.ps1 && pwsh -NoProfile -File windows/msix/validate-msix.ps1",
+    "qa:existing": "node scripts/qa-with-db.mjs node scripts/qa-existing.mjs",
+    "qa:simulation": "node scripts/qa-with-db.mjs node scripts/qa-simulate.cjs",
+    "qa:native": "node scripts/qa-native.cjs"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.4.6",
+    "@electric-sql/pglite-socket": "0.2.13",
+    "playwright": "1.61.0",
     "turbo": "^2.10.9",
     "typescript": "^5.9.3"
   },

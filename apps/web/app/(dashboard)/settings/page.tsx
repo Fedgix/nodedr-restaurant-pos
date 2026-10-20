@@ -10,6 +10,7 @@ import {
   type TaxMode,
   type TaxRegime,
 } from "@nodedr-restaurant/types";
+import { WebsiteCard } from "@/components/settings/website-card";
 import { KioskCard } from "@/components/settings/kiosk-card";
 import { PrinterDiagnosticsCard } from "@/components/settings/printer-diagnostics-card";
 import { SettingsTabs } from "@/components/settings/settings-tabs";
@@ -45,8 +46,12 @@ export default function SettingsPage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-[32px] font-semibold tracking-tight text-foreground">Settings</h1>
-        <p className="text-sm text-muted-foreground">Restaurant, branch, and staff configuration</p>
+        <h1 className="text-[32px] font-semibold tracking-tight text-foreground">
+          Settings
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          Restaurant, branch, and staff configuration
+        </p>
       </div>
 
       <SettingsTabs />
@@ -65,9 +70,30 @@ export default function SettingsPage() {
         />
       )}
 
-      {data && <OnlineOrdersCard key={data.branch.id} branchId={branchId} branch={data.branch} />}
+      {data && (
+        <OnlineOrdersCard
+          key={data.branch.id}
+          branchId={branchId}
+          branch={data.branch}
+        />
+      )}
 
-      {data && <KioskCard key={`kiosk-${data.branch.id}`} branchId={branchId} branch={data.branch} />}
+      {data && (
+        <KioskCard
+          key={`kiosk-${data.branch.id}`}
+          branchId={branchId}
+          branch={data.branch}
+        />
+      )}
+
+      {data && (
+        <WebsiteCard
+          key={`website-${data.branch.id}`}
+          branchId={branchId}
+          branch={data.branch}
+          restaurant={data.restaurant}
+        />
+      )}
 
       <NotificationSettingsCard />
 
@@ -84,27 +110,37 @@ function OnlineOrdersCard({
   branch: { autoConfirmOrders: boolean; autoConfirmReservations: boolean };
 }) {
   const update = useUpdateBranchSettings(branchId);
-  const save = (dto: { autoConfirmOrders?: boolean; autoConfirmReservations?: boolean }) =>
+  const save = (dto: {
+    autoConfirmOrders?: boolean;
+    autoConfirmReservations?: boolean;
+  }) =>
     update.mutate(dto, {
       onSuccess: () => toast.success("Saved"),
-      onError: (err) => toast.error(err instanceof Error ? err.message : "Could not save"),
+      onError: (err) =>
+        toast.error(err instanceof Error ? err.message : "Could not save"),
     });
 
   return (
     <Card className="flex flex-col gap-4 p-6">
       <div>
-        <h2 className="text-[18px] font-medium text-foreground">Online orders &amp; table bookings</h2>
+        <h2 className="text-[18px] font-medium text-foreground">
+          Online orders &amp; table bookings
+        </h2>
         <p className="text-sm text-muted-foreground">
-          Choose whether orders and bookings from your website are accepted automatically or wait for
-          you to accept them. You can always cancel an order or booking from its window.
+          Choose whether orders and bookings from your website are accepted
+          automatically or wait for you to accept them. You can always cancel an
+          order or booking from its window.
         </p>
       </div>
       <div className="flex items-center justify-between gap-4 rounded-lg border border-border p-4">
         <div className="flex flex-col gap-0.5">
-          <Label htmlFor="auto-confirm-orders">Auto-confirm online orders</Label>
+          <Label htmlFor="auto-confirm-orders">
+            Auto-confirm online orders
+          </Label>
           <p className="text-xs text-muted-foreground">
-            Off = each new order rings, then waits for you to Accept or Reject before it reaches the
-            kitchen. On = sent to the kitchen straight away.
+            Off = each new order rings, then waits for you to Accept or Reject
+            before it reaches the kitchen. On = sent to the kitchen straight
+            away.
           </p>
         </div>
         <Switch
@@ -116,9 +152,12 @@ function OnlineOrdersCard({
       </div>
       <div className="flex items-center justify-between gap-4 rounded-lg border border-border p-4">
         <div className="flex flex-col gap-0.5">
-          <Label htmlFor="auto-confirm-bookings">Auto-confirm table bookings</Label>
+          <Label htmlFor="auto-confirm-bookings">
+            Auto-confirm table bookings
+          </Label>
           <p className="text-xs text-muted-foreground">
-            Off = new bookings wait for you to Accept. On = confirmed automatically.
+            Off = new bookings wait for you to Accept. On = confirmed
+            automatically.
           </p>
         </div>
         <Switch
@@ -138,7 +177,9 @@ function NotificationSettingsCard() {
   return (
     <Card className="flex flex-col gap-4 p-6">
       <div>
-        <h2 className="text-[18px] font-medium text-foreground">Notifications</h2>
+        <h2 className="text-[18px] font-medium text-foreground">
+          Notifications
+        </h2>
         <p className="text-sm text-muted-foreground">
           New orders, table reservations, and kitchen tickets on this device.
         </p>
@@ -148,8 +189,8 @@ function NotificationSettingsCard() {
           <Label htmlFor="notification-sound">Notification sound</Label>
           <p className="text-xs text-muted-foreground">
             Plays a chime for new orders, reservations, and kitchen display
-            tickets. This only affects this device/browser — mute the
-            kitchen display separately from the office if needed.
+            tickets. This only affects this device/browser — mute the kitchen
+            display separately from the office if needed.
           </p>
         </div>
         <Switch
@@ -177,8 +218,12 @@ function GeneralSettingsForm({
   const [currency, setCurrency] = useState(restaurant.currency);
   const [timezone, setTimezone] = useState(restaurant.timezone);
   const [upiVpa, setUpiVpa] = useState(restaurant.upiVpa ?? "");
-  const [upiPayeeName, setUpiPayeeName] = useState(restaurant.upiPayeeName ?? "");
-  const [loyaltyPointValue, setLoyaltyPointValue] = useState(restaurant.loyaltyPointValue);
+  const [upiPayeeName, setUpiPayeeName] = useState(
+    restaurant.upiPayeeName ?? "",
+  );
+  const [loyaltyPointValue, setLoyaltyPointValue] = useState(
+    restaurant.loyaltyPointValue,
+  );
   const [loyaltyEarnPerCurrency, setLoyaltyEarnPerCurrency] = useState(
     String(restaurant.loyaltyEarnPerCurrency),
   );
@@ -216,7 +261,8 @@ function GeneralSettingsForm({
       },
       {
         onSuccess: () => toast.success("Restaurant details saved"),
-        onError: (err) => toast.error(err instanceof ApiError ? err.message : "Could not save"),
+        onError: (err) =>
+          toast.error(err instanceof ApiError ? err.message : "Could not save"),
       },
     );
   };
@@ -237,7 +283,8 @@ function GeneralSettingsForm({
       },
       {
         onSuccess: () => toast.success("Branch details saved"),
-        onError: (err) => toast.error(err instanceof ApiError ? err.message : "Could not save"),
+        onError: (err) =>
+          toast.error(err instanceof ApiError ? err.message : "Could not save"),
       },
     );
   };
@@ -271,14 +318,22 @@ function GeneralSettingsForm({
                   uploadLogo.mutate(file, {
                     onSuccess: (res) => setLogoUrl(res.url),
                     onError: (err) =>
-                      toast.error(err instanceof ApiError ? err.message : "Could not upload logo"),
+                      toast.error(
+                        err instanceof ApiError
+                          ? err.message
+                          : "Could not upload logo",
+                      ),
                   });
                 }}
               />
               {logoUrl ? (
                 <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-secondary">
                   {/* eslint-disable-next-line @next/next/no-img-element -- uploaded asset served from the backend, not a Next-optimizable remote source */}
-                  <img src={logoUrl} alt="" className="h-full w-full object-contain" />
+                  <img
+                    src={logoUrl}
+                    alt=""
+                    className="h-full w-full object-contain"
+                  />
                   <button
                     type="button"
                     onClick={() => {
@@ -305,8 +360,9 @@ function GeneralSettingsForm({
                 </button>
               )}
               <p className="text-xs text-muted-foreground">
-                Shows in the app sidebar and login screen instead of the OrderRestro mark.
-                Square, at least 256×256px, PNG with a transparent background works best.
+                Shows in the app sidebar and login screen instead of the
+                OrderRestro mark. Square, at least 256×256px, PNG with a
+                transparent background works best.
               </p>
             </div>
           </div>
@@ -315,7 +371,9 @@ function GeneralSettingsForm({
             <Input
               id="r-name"
               value={name}
-              onChange={(e) => setName(e.target.value.slice(0, RESTAURANT_NAME_MAX_LENGTH))}
+              onChange={(e) =>
+                setName(e.target.value.slice(0, RESTAURANT_NAME_MAX_LENGTH))
+              }
               maxLength={RESTAURANT_NAME_MAX_LENGTH}
               required
             />
@@ -325,7 +383,11 @@ function GeneralSettingsForm({
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="r-legal">Legal name</Label>
-            <Input id="r-legal" value={legalName} onChange={(e) => setLegalName(e.target.value)} />
+            <Input
+              id="r-legal"
+              value={legalName}
+              onChange={(e) => setLegalName(e.target.value)}
+            />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
@@ -340,12 +402,19 @@ function GeneralSettingsForm({
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="r-timezone">Timezone</Label>
-              <Input id="r-timezone" value={timezone} onChange={(e) => setTimezone(e.target.value)} required />
+              <Input
+                id="r-timezone"
+                value={timezone}
+                onChange={(e) => setTimezone(e.target.value)}
+                required
+              />
             </div>
           </div>
 
           <div className="flex flex-col gap-2 border-t border-border pt-4">
-            <h3 className="text-sm font-medium text-foreground">Loyalty program</h3>
+            <h3 className="text-sm font-medium text-foreground">
+              Loyalty program
+            </h3>
             <p className="text-xs text-muted-foreground">
               How customers earn and redeem points at checkout.
             </p>
@@ -354,7 +423,9 @@ function GeneralSettingsForm({
             <div className="flex flex-col gap-2">
               <Label htmlFor="r-loyalty-earn">Earn 1 point per</Label>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">{currency}</span>
+                <span className="text-sm text-muted-foreground">
+                  {currency}
+                </span>
                 <Input
                   id="r-loyalty-earn"
                   type="number"
@@ -369,7 +440,9 @@ function GeneralSettingsForm({
             <div className="flex flex-col gap-2">
               <Label htmlFor="r-loyalty-value">1 point redeems for</Label>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">{currency}</span>
+                <span className="text-sm text-muted-foreground">
+                  {currency}
+                </span>
                 <Input
                   id="r-loyalty-value"
                   type="number"
@@ -394,7 +467,8 @@ function GeneralSettingsForm({
                 autoComplete="off"
               />
               <p className="text-xs text-muted-foreground">
-                Shown as a scannable QR at checkout and on the customer display, with the exact bill amount filled in.
+                Shown as a scannable QR at checkout and on the customer display,
+                with the exact bill amount filled in.
               </p>
             </div>
             <div className="flex flex-col gap-2">
@@ -409,7 +483,11 @@ function GeneralSettingsForm({
             </div>
           </div>
 
-          <Button type="submit" disabled={updateRestaurant.isPending} className="self-start">
+          <Button
+            type="submit"
+            disabled={updateRestaurant.isPending}
+            className="self-start"
+          >
             {updateRestaurant.isPending ? "Saving…" : "Save restaurant"}
           </Button>
         </form>
@@ -420,20 +498,37 @@ function GeneralSettingsForm({
         <form onSubmit={onSubmitBranch} className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <Label htmlFor="b-name">Branch name</Label>
-            <Input id="b-name" value={branchName} onChange={(e) => setBranchName(e.target.value)} required />
+            <Input
+              id="b-name"
+              value={branchName}
+              onChange={(e) => setBranchName(e.target.value)}
+              required
+            />
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="b-address">Address</Label>
-            <Input id="b-address" value={address} onChange={(e) => setAddress(e.target.value)} />
+            <Input
+              id="b-address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <Label htmlFor="b-phone">Phone</Label>
-              <Input id="b-phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <Input
+                id="b-phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="b-gst">GST number (legacy)</Label>
-              <Input id="b-gst" value={gstNumber} onChange={(e) => setGstNumber(e.target.value)} />
+              <Input
+                id="b-gst"
+                value={gstNumber}
+                onChange={(e) => setGstNumber(e.target.value)}
+              />
             </div>
           </div>
 
@@ -461,13 +556,18 @@ function GeneralSettingsForm({
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="b-tax-mode">Menu prices are</Label>
-              <Select value={taxMode} onValueChange={(v) => setTaxMode(v as TaxMode)}>
+              <Select
+                value={taxMode}
+                onValueChange={(v) => setTaxMode(v as TaxMode)}
+              >
                 <SelectTrigger id="b-tax-mode">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="INCLUSIVE">Tax-inclusive</SelectItem>
-                  <SelectItem value="EXCLUSIVE">Tax-exclusive (tax added at checkout)</SelectItem>
+                  <SelectItem value="EXCLUSIVE">
+                    Tax-exclusive (tax added at checkout)
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -486,12 +586,20 @@ function GeneralSettingsForm({
               />
             </div>
             <div className="flex flex-col gap-2">
-              <Label htmlFor="b-tax-id">{TAX_REGIME_PRESETS[taxRegime].taxIdLabel}</Label>
-              <Input id="b-tax-id" value={taxId} onChange={(e) => setTaxId(e.target.value)} />
+              <Label htmlFor="b-tax-id">
+                {TAX_REGIME_PRESETS[taxRegime].taxIdLabel}
+              </Label>
+              <Input
+                id="b-tax-id"
+                value={taxId}
+                onChange={(e) => setTaxId(e.target.value)}
+              />
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="b-tax-label">Receipt label override (optional)</Label>
+            <Label htmlFor="b-tax-label">
+              Receipt label override (optional)
+            </Label>
             <Input
               id="b-tax-label"
               value={taxLabel}
@@ -500,7 +608,11 @@ function GeneralSettingsForm({
             />
           </div>
 
-          <Button type="submit" disabled={updateBranch.isPending} className="self-start">
+          <Button
+            type="submit"
+            disabled={updateBranch.isPending}
+            className="self-start"
+          >
             {updateBranch.isPending ? "Saving…" : "Save branch"}
           </Button>
         </form>

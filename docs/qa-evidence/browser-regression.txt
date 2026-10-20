@@ -1,0 +1,17 @@
+PASS B01
+PASS B02
+PASS B03
+PASS B04
+PASS B05
+PASS B06
+PASS B07
+FAIL B08 Expected values to be strictly equal:
+
+401 !== 403
+
+{
+  VERIFIED: 68,
+  'PARTIALLY VERIFIED': 8,
+  'NOT IMPLEMENTED': 1,
+  FAILED: 1
+}

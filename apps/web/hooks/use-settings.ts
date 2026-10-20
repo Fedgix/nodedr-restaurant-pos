@@ -10,6 +10,10 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 
 export interface RestaurantSettings {
+  brandColor: string;
+  fontFamily: string;
+  websiteHeadline: string | null;
+  heroImageUrl: string | null;
   id: string;
   name: string;
   legalName: string | null;
@@ -23,6 +27,7 @@ export interface RestaurantSettings {
 }
 
 export interface BranchSettings {
+  customerPortalEnabled: boolean;
   id: string;
   name: string;
   address: string | null;
@@ -60,14 +65,17 @@ export function useSettings(branchId: string | null) {
 export function useUpdateRestaurantSettings(branchId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (dto: RestaurantSettingsDto) => api.patch("/settings/restaurant", dto),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["settings", branchId] }),
+    mutationFn: (dto: RestaurantSettingsDto) =>
+      api.patch("/settings/restaurant", dto),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: ["settings", branchId] }),
   });
 }
 
 export function useUploadRestaurantLogo() {
   return useMutation({
-    mutationFn: (file: File) => api.upload<{ url: string }>("/settings/restaurant/logo", file),
+    mutationFn: (file: File) =>
+      api.upload<{ url: string }>("/settings/restaurant/logo", file),
   });
 }
 
@@ -76,7 +84,8 @@ export function useUpdateBranchSettings(branchId: string | null) {
   return useMutation({
     mutationFn: (dto: BranchSettingsDto) =>
       api.patch(`/settings/branch?branchId=${branchId}`, dto),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["settings", branchId] }),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: ["settings", branchId] }),
   });
 }
 
@@ -84,7 +93,10 @@ export function useSetKiosk(branchId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (action: "enable" | "rotate" | "disable") =>
-      api.post<{ kioskToken: string | null }>(`/settings/kiosk/${action}?branchId=${branchId}`),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["settings", branchId] }),
+      api.post<{ kioskToken: string | null }>(
+        `/settings/kiosk/${action}?branchId=${branchId}`,
+      ),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: ["settings", branchId] }),
   });
 }

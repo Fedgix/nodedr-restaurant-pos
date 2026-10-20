@@ -1,0 +1,63 @@
+# Fedgix source builds only. No upstream updater, Docker socket or USB passthrough.
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fedgix-restaurant-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nodedr
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set a unique password in .env}
+      POSTGRES_DB: nodedr_restaurant
+    expose:
+    - '5432'
+    volumes:
+    - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U nodedr
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-dev}
+    image: fedgix-restaurant-backend:${APP_VERSION:-development}
+    container_name: fedgix-restaurant-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nodedr:${POSTGRES_PASSWORD:?set a unique password
+        in .env}@postgres:5432/nodedr_restaurant
+      JWT_SECRET: ${JWT_SECRET:?set a real JWT_SECRET in .env for anything beyond
+        local dev}
+      JWT_EXPIRES_IN: 12h
+      PORT: '4000'
+      CORS_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:1995}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      UPLOADS_DIR: /data/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    expose:
+    - '4000'
+    volumes:
+    - uploads_data:/data/uploads
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        BACKEND_URL: http://backend:4000
+    image: fedgix-restaurant-web:${APP_VERSION:-development}
+    container_name: fedgix-restaurant-web
+    restart: unless-stopped
+    ports:
+    - ${BIND_ADDRESS:-127.0.0.1}:${HOST_PORT:-1995}:3000
+    depends_on:
+    - backend
+volumes:
+  pg_data: null
+  uploads_data: null

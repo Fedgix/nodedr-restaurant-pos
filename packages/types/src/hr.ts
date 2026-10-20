@@ -1,6 +1,14 @@
 import { z } from "zod";
 
-const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Use YYYY-MM-DD");
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "Use YYYY-MM-DD")
+  .refine(
+    (s) =>
+      !Number.isNaN(Date.parse(s)) &&
+      new Date(s).toISOString().slice(0, 10) === s,
+    "Use a valid calendar date",
+  );
 
 export const shiftSchema = z
   .object({

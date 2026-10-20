@@ -1,0 +1,336 @@
+{
+  "branch": "cmvg3i4zc001ws10j0fpn48bt",
+  "staff": [
+    {
+      "id": "cmvg3i5bu002us10jgbrii6g1",
+      "name": "QA-STAFF-001",
+      "email": "qa-staff-001@example.invalid",
+      "role": "WAITER"
+    },
+    {
+      "id": "cmvg3i5po002ys10jckcc1auo",
+      "name": "QA-STAFF-002",
+      "email": "qa-staff-002@example.invalid",
+      "role": "WAITER"
+    },
+    {
+      "id": "cmvg3i62z0032s10j4efqk48q",
+      "name": "QA-STAFF-003",
+      "email": "qa-staff-003@example.invalid",
+      "role": "WAITER"
+    },
+    {
+      "id": "cmvg3i6gj0036s10jph0j3vlm",
+      "name": "QA-STAFF-004",
+      "email": "qa-staff-004@example.invalid",
+      "role": "WAITER"
+    },
+    {
+      "id": "cmvg3i6tz003as10jrsvojlg5",
+      "name": "QA-STAFF-005",
+      "email": "qa-staff-005@example.invalid",
+      "role": "WAITER"
+    },
+    {
+      "id": "cmvg3i776003es10ja971rfda",
+      "name": "QA-STAFF-006",
+      "email": "qa-staff-006@example.invalid",
+      "role": "KITCHEN_STAFF"
+    },
+    {
+      "id": "cmvg3i7k9003is10jgijae226",
+      "name": "QA-STAFF-007",
+      "email": "qa-staff-007@example.invalid",
+      "role": "KITCHEN_STAFF"
+    },
+    {
+      "id": "cmvg3i7xt003ms10jwhqdmitd",
+      "name": "QA-STAFF-008",
+      "email": "qa-staff-008@example.invalid",
+      "role": "CHEF"
+    },
+    {
+      "id": "cmvg3i8bh003qs10j46tnbrkk",
+      "name": "QA-STAFF-009",
+      "email": "qa-staff-009@example.invalid",
+      "role": "CASHIER"
+    },
+    {
+      "id": "cmvg3i8o5003us10je9xnc023",
+      "name": "QA-STAFF-010",
+      "email": "qa-staff-010@example.invalid",
+      "role": "CASHIER"
+    },
+    {
+      "id": "cmvg3i91f003ys10j7pba7k93",
+      "name": "QA-STAFF-011",
+      "email": "qa-staff-011@example.invalid",
+      "role": "QA_SUPERVISOR"
+    },
+    {
+      "id": "cmvg3i9el0042s10j92o35x7g",
+      "name": "QA-STAFF-012",
+      "email": "qa-staff-012@example.invalid",
+      "role": "RESTAURANT_MANAGER"
+    },
+    {
+      "id": "cmvg3i9rz0046s10jzvq84lbn",
+      "name": "QA-STAFF-013",
+      "email": "qa-staff-013@example.invalid",
+      "role": "RESTAURANT_MANAGER"
+    },
+    {
+      "id": "cmvg3ia5c004as10jws1r9lzs",
+      "name": "QA-STAFF-014",
+      "email": "qa-staff-014@example.invalid",
+      "role": "INVENTORY_MANAGER"
+    },
+    {
+      "id": "cmvg3iaiz004es10jbmx4kvl7",
+      "name": "QA-STAFF-015",
+      "email": "qa-staff-015@example.invalid",
+      "role": "INVENTORY_MANAGER"
+    },
+    {
+      "id": "cmvg3iawl004is10j4lncdaln",
+      "name": "QA-STAFF-016",
+      "email": "qa-staff-016@example.invalid",
+      "role": "QA_HR"
+    },
+    {
+      "id": "cmvg3ib9p004ms10j5dl1xmgr",
+      "name": "QA-STAFF-017",
+      "email": "qa-staff-017@example.invalid",
+      "role": "QA_HR"
+    },
+    {
+      "id": "cmvg3ibnc004qs10jfpm23gpv",
+      "name": "QA-STAFF-018",
+      "email": "qa-staff-018@example.invalid",
+      "role": "ACCOUNTANT"
+    },
+    {
+      "id": "cmvg3ic0y004us10ja06f465o",
+      "name": "QA-STAFF-019",
+      "email": "qa-staff-019@example.invalid",
+      "role": "BARTENDER"
+    },
+    {
+      "id": "cmvg3icfw004ys10j4qkrj6jc",
+      "name": "QA-STAFF-020",
+      "email": "qa-staff-020@example.invalid",
+      "role": "OWNER"
+    }
+  ],
+  "customers": [
+    {
+      "id": "QA-CUST-001",
+      "email": "qa-cust-001@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-002",
+      "email": "qa-cust-002@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-003",
+      "email": "qa-cust-003@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-004",
+      "email": "qa-cust-004@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-005",
+      "email": "qa-cust-005@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-006",
+      "email": "qa-cust-006@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-007",
+      "email": "qa-cust-007@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-008",
+      "email": "qa-cust-008@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-009",
+      "email": "qa-cust-009@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-010",
+      "email": "qa-cust-010@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-011",
+      "email": "qa-cust-011@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-012",
+      "email": "qa-cust-012@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-013",
+      "email": "qa-cust-013@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-014",
+      "email": "qa-cust-014@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-015",
+      "email": "qa-cust-015@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-016",
+      "email": "qa-cust-016@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-017",
+      "email": "qa-cust-017@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-018",
+      "email": "qa-cust-018@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-019",
+      "email": "qa-cust-019@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    },
+    {
+      "id": "QA-CUST-020",
+      "email": "qa-cust-020@example.invalid",
+      "contact": "Synthetic .invalid email; no messages sent"
+    }
+  ],
+  "reviewers": [
+    {
+      "id": "QA-REVIEW-OWNER",
+      "role": "OWNER",
+      "email": "qa-review-owner@example.invalid",
+      "permissions": [
+        "sales.view",
+        "dashboard.sales.view",
+        "orders.create",
+        "orders.edit",
+        "orders.cancel",
+        "orders.accept",
+        "discounts.apply",
+        "refunds.process",
+        "orders.delete",
+        "bills.print",
+        "tables.view",
+        "tables.manage",
+        "menu.view",
+        "menu.manage",
+        "inventory.manage",
+        "reports.access",
+        "users.manage",
+        "reports.financial.view",
+        "data.export",
+        "kds.manage",
+        "reservations.manage",
+        "settings.manage",
+        "customers.manage",
+        "audit_log.view",
+        "roles.manage",
+        "backup.manage",
+        "attendance.manage",
+        "delivery.manage",
+        "staff.manage",
+        "accounting.manage",
+        "marketing.manage",
+        "operations.manage",
+        "system.update"
+      ]
+    },
+    {
+      "id": "QA-REVIEW-MANAGER",
+      "role": "RESTAURANT_MANAGER",
+      "email": "qa-review-manager@example.invalid",
+      "permissions": [
+        "sales.view",
+        "orders.create",
+        "orders.edit",
+        "orders.cancel",
+        "orders.accept",
+        "discounts.apply",
+        "bills.print",
+        "tables.manage",
+        "tables.view",
+        "menu.manage",
+        "menu.view",
+        "inventory.manage",
+        "reports.access",
+        "kds.manage",
+        "reservations.manage",
+        "customers.manage",
+        "refunds.process",
+        "attendance.manage",
+        "delivery.manage",
+        "staff.manage",
+        "accounting.manage",
+        "marketing.manage",
+        "operations.manage"
+      ]
+    },
+    {
+      "id": "QA-REVIEW-FINANCE",
+      "role": "QA_FINANCE_REVIEW",
+      "email": "qa-review-finance@example.invalid",
+      "permissions": [
+        "accounting.manage",
+        "data.export",
+        "reports.financial.view",
+        "reports.access",
+        "sales.view",
+        "dashboard.sales.view"
+      ]
+    },
+    {
+      "id": "QA-REVIEW-OPERATIONS",
+      "role": "QA_OPERATIONS_REVIEW",
+      "email": "qa-review-operations@example.invalid",
+      "permissions": [
+        "reports.access",
+        "attendance.manage",
+        "inventory.manage",
+        "kds.manage",
+        "reservations.manage",
+        "tables.view"
+      ]
+    },
+    {
+      "id": "QA-REVIEW-QA",
+      "role": "QA_REVIEW",
+      "email": "qa-review-qa@example.invalid",
+      "permissions": [
+        "reports.access",
+        "kds.manage",
+        "menu.view",
+        "tables.view"
+      ]
+    }
+  ]
+}

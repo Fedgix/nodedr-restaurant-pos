@@ -9,6 +9,18 @@ export const RESTAURANT_NAME_MAX_LENGTH = 40;
 export const restaurantSettingsSchema = z.object({
   name: z.string().min(1).max(RESTAURANT_NAME_MAX_LENGTH).optional(),
   legalName: z.string().optional(),
+  brandColor: z
+    .string()
+    .regex(/^#[0-9a-fA-F]{6}$/)
+    .optional(),
+  fontFamily: z.enum(["system", "serif", "sans"]).optional(),
+  websiteHeadline: z.string().max(160).nullable().optional(),
+  heroImageUrl: z
+    .string()
+    .max(2048)
+    .regex(/^\/api\/uploads\/[^/]+$/)
+    .nullable()
+    .optional(),
   // Shown in place of the product logo in the app shell header and on the
   // login screen once set. Square, ~256x256px+ PNG/SVG with a transparent
   // background reads best in that slot — see the settings page hint text.
@@ -19,7 +31,10 @@ export const restaurantSettingsSchema = z.object({
   upiVpa: z
     .string()
     .trim()
-    .regex(/^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z][a-zA-Z0-9]{1,64}$/, "Enter a valid UPI id like name@bank")
+    .regex(
+      /^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z][a-zA-Z0-9]{1,64}$/,
+      "Enter a valid UPI id like name@bank",
+    )
     .optional()
     .nullable(),
   upiPayeeName: z.string().trim().max(60).optional().nullable(),
@@ -31,6 +46,7 @@ export type RestaurantSettingsDto = z.infer<typeof restaurantSettingsSchema>;
 import { TAX_MODES, TAX_REGIMES } from "./tax";
 
 export const branchSettingsSchema = z.object({
+  customerPortalEnabled: z.boolean().optional(),
   name: z.string().min(1).optional(),
   address: z.string().optional(),
   phone: z.string().optional(),
