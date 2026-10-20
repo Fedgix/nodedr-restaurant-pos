@@ -1,0 +1,112 @@
+$ pnpm --filter @nodedr-restaurant/backend prisma:generate && turbo run build
+$ prisma generate
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.19.3) to ./../../node_modules/.pnpm/@prisma+client@6.19.3_prisma@6.19.3_typescript@5.9.3__typescript@5.9.3/node_modules/@prisma/client in 565ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+• turbo 2.10.9
+
+   • Packages in scope: @nodedr-restaurant/backend, @nodedr-restaurant/types, web
+   • Running build in 3 packages
+   • Remote caching disabled
+
+@nodedr-restaurant/types:build: cache miss, executing ccaa2f1172f4883a
+@nodedr-restaurant/types:build: $ tsc -p tsconfig.json
+@nodedr-restaurant/backend:build: cache miss, executing 6912d50f86c1b7c0
+web:build: cache miss, executing e50b7b850afd088c
+@nodedr-restaurant/backend:build: $ prisma generate && nest build
+web:build: $ next build --webpack
+web:build: ▲ Next.js 16.3.8 (webpack)
+web:build: ✓ Running next.config.ts took 32ms
+@nodedr-restaurant/backend:build: warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+@nodedr-restaurant/backend:build: For more information, see: https://pris.ly/prisma-config
+@nodedr-restaurant/backend:build: 
+web:build: 
+web:build:   Creating an optimized production build ...
+@nodedr-restaurant/backend:build: Prisma schema loaded from prisma/schema.prisma
+@nodedr-restaurant/backend:build: 
+@nodedr-restaurant/backend:build: ✔ Generated Prisma Client (v6.19.3) to ./../../node_modules/.pnpm/@prisma+client@6.19.3_prisma@6.19.3_typescript@5.9.3__typescript@5.9.3/node_modules/@prisma/client in 812ms
+@nodedr-restaurant/backend:build: 
+@nodedr-restaurant/backend:build: Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+@nodedr-restaurant/backend:build: 
+@nodedr-restaurant/backend:build: Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+@nodedr-restaurant/backend:build: 
+web:build: ✓ Compiled successfully in 15.5s
+web:build:   Running TypeScript ...
+web:build:   Finished TypeScript in 4.4s ...
+web:build:   Collecting page data using 8 workers ...
+web:build:   Generating static pages using 8 workers (0/45) ...
+web:build:   Generating static pages using 8 workers (11/45) 
+web:build:   Generating static pages using 8 workers (22/45) 
+web:build:   Generating static pages using 8 workers (33/45) 
+web:build: ✓ Generating static pages using 8 workers (45/45) in 931ms
+web:build:   Finalizing page optimization ...
+web:build:   Collecting build traces ...
+web:build: 
+web:build: Route (app)
+web:build: ┌ ○ /
+web:build: ├ ○ /_not-found
+web:build: ├ ○ /accounting
+web:build: ├ ○ /apple-icon.png
+web:build: ├ ○ /attendance
+web:build: ├ ○ /customer-display
+web:build: ├ ○ /customers
+web:build: ├ ƒ /customers/[id]
+web:build: ├ ○ /dashboard
+web:build: ├ ○ /delivery
+web:build: ├ ƒ /dine/[branchId]
+web:build: ├ ○ /docs
+web:build: ├ ○ /docs/accessibility
+web:build: ├ ○ /docs/api
+web:build: ├ ○ /docs/compliance-india
+web:build: ├ ○ /icon.png
+web:build: ├ ○ /inventory
+web:build: ├ ○ /inventory/procurement
+web:build: ├ ○ /inventory/purchase-orders
+web:build: ├ ƒ /inventory/purchase-orders/[id]
+web:build: ├ ○ /inventory/suppliers
+web:build: ├ ○ /inventory/transfers
+web:build: ├ ○ /inventory/waste
+web:build: ├ ○ /kds
+web:build: ├ ƒ /kiosk/[token]
+web:build: ├ ƒ /kiosk/[token]/manifest.webmanifest
+web:build: ├ ƒ /kiosk/sw.js
+web:build: ├ ○ /login
+web:build: ├ ○ /marketing
+web:build: ├ ○ /menu
+web:build: ├ ○ /my-pay
+web:build: ├ ○ /operations
+web:build: ├ ƒ /order/[qrToken]
+web:build: ├ ○ /orders
+web:build: ├ ○ /pos
+web:build: ├ ○ /reports
+web:build: ├ ○ /reservations
+web:build: ├ ○ /settings
+web:build: ├ ○ /settings/api-keys
+web:build: ├ ○ /settings/audit-log
+web:build: ├ ○ /settings/backup
+web:build: ├ ○ /settings/roles
+web:build: ├ ○ /settings/security
+web:build: ├ ○ /settings/staff
+web:build: ├ ○ /settings/updates
+web:build: ├ ○ /settings/webhooks
+web:build: ├ ○ /signup
+web:build: ├ ○ /tables
+web:build: └ ○ /team
+web:build: 
+web:build: 
+web:build: ○  (Static)   prerendered as static content
+web:build: ƒ  (Dynamic)  server-rendered on demand
+web:build: 
+
+ Tasks:    3 successful, 3 total
+Cached:    0 cached, 3 total
+  Time:    52.434s 
+

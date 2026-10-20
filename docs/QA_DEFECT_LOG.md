@@ -145,3 +145,16 @@ Fixed means the named regression was rerun; code changes alone are not counted. 
 - Correction / next action: Not changed; needs global branch policy and regression coverage.
 - Evidence / regression: src/common/services/branch-access.service.ts.
 - Final status: OPEN / multi-branch acceptance blocker.
+
+## FGX-013 — Fresh cloud build misses generated Prisma client
+
+- Scenario / role: Demo deployment, developer.
+- Severity: High (build blocker).
+- Reproduction: Build the monorepo after a dependency installation whose Prisma postinstall cannot discover the backend schema. Reproduced locally by temporarily removing the generated client and invoking the previous backend build.
+- Expected: Build generates the schema-specific client before compiling backend TypeScript.
+- Actual: Missing Prisma exports and inferred empty model types cause compilation failures; the frontend build is canceled by Turbo.
+- Root cause: Prisma's dependency postinstall searches default schema locations; the schema is under apps/backend/prisma. Neither the previous root build nor backend build explicitly generated it. Docker had a separate generate step, masking this gap.
+- Fix: Root build explicitly invokes backend prisma:generate before Turbo. Direct backend builds invoke prisma generate before nest build. No migrations or seeds are run by these commands.
+- Regression: Missing-client old build exits 1; updated full root build regenerates the client and completes all three build tasks with no cache hits.
+- Evidence: qa-evidence/deployment-prisma-before.txt and qa-evidence/deployment-prisma-after.txt.
+- Final status: VERIFIED locally. Vercel rebuild and runtime remain BLOCKED pending correct project configuration, authorized hosting access and a dedicated demo database.

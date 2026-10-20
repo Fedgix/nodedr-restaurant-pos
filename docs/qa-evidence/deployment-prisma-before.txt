@@ -1,0 +1,2391 @@
+Scope: all 4 workspace projects
+✓ Lockfile passes supply-chain policies (verified 1h ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 1.5s using pnpm v11.25.0
+[96mprisma/seed.ts[0m:[93m1[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'PrismaClient'.
+
+[7m1[0m import { PrismaClient } from '@prisma/client';
+[7m [0m [91m         ~~~~~~~~~~~~[0m
+[96mprisma/seed.ts[0m:[93m89[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'id' does not exist on type '{}'.
+
+[7m89[0m           permissionId: permission.id,
+[7m  [0m [91m                                   ~~[0m
+[96msrc/audit/audit.service.ts[0m:[93m3[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m3[0m import type { Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~~[0m
+[96msrc/audit/audit.service.ts[0m:[93m44[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'auditLog' does not exist on type 'PrismaService'.
+
+[7m44[0m     await this.prisma.auditLog.create({
+[7m  [0m [91m                      ~~~~~~~~[0m
+[96msrc/audit/audit.service.ts[0m:[93m72[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'auditLog' does not exist on type 'PrismaService'.
+
+[7m72[0m       this.prisma.auditLog.findMany({
+[7m  [0m [91m                  ~~~~~~~~[0m
+[96msrc/audit/audit.service.ts[0m:[93m79[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'auditLog' does not exist on type 'PrismaService'.
+
+[7m79[0m       this.prisma.auditLog.count({ where }),
+[7m  [0m [91m                  ~~~~~~~~[0m
+[96msrc/audit/audit.service.ts[0m:[93m97[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'auditLog' does not exist on type 'PrismaService'.
+
+[7m97[0m     const rows = await this.prisma.auditLog.findMany({
+[7m  [0m [91m                                   ~~~~~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m46[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m46[0m     const user = await this.prisma.user.findFirst({
+[7m  [0m [91m                                   ~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m72[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m72[0m     const existing = await this.prisma.user.findFirst({
+[7m  [0m [91m                                       ~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m84[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'permission' does not exist on type 'PrismaService'.
+
+[7m84[0m       await this.prisma.permission.upsert({
+[7m  [0m [91m                        ~~~~~~~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m90[0m:[93m46[0m - [91merror[0m[90m TS2339: [0mProperty 'permission' does not exist on type 'PrismaService'.
+
+[7m90[0m     const allPermissions = await this.prisma.permission.findMany();
+[7m  [0m [91m                                             ~~~~~~~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m95[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m95[0m     const owner = await this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m121[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'id' does not exist on type '{}'.
+
+[7m121[0m               permissionId: permission.id,
+[7m   [0m [91m                                       ~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m150[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'restaurant' does not exist on type 'PrismaService'.
+
+[7m150[0m     const restaurant = await this.prisma.restaurant.findFirst({
+[7m   [0m [91m                                         ~~~~~~~~~~[0m
+[96msrc/auth/auth.service.ts[0m:[93m157[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m157[0m     const user = await this.prisma.user.findUnique({
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/auth/jwt.strategy.ts[0m:[93m32[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m32[0m     const user = await this.prisma.user.findUnique({
+[7m  [0m [91m                                   ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m95[0m:[93m45[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m95[0m         const { count } = await this.prisma.user.updateMany({
+[7m  [0m [91m                                            ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m124[0m:[93m45[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m124[0m         const { count } = await this.prisma.user.updateMany({
+[7m   [0m [91m                                            ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m139[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m139[0m     const u = await this.prisma.user.findUniqueOrThrow({
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m151[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m151[0m     const u = await this.prisma.user.findUniqueOrThrow({
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m163[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m163[0m     await this.prisma.user.update({
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m175[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m175[0m     const u = await this.prisma.user.findUniqueOrThrow({
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m193[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m193[0m     await this.prisma.user.update({
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m213[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m213[0m     const u = await this.prisma.user.findUniqueOrThrow({
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m237[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m237[0m     const target = await this.prisma.user.findFirst({
+[7m   [0m [91m                                     ~~~~[0m
+[96msrc/auth/two-factor.service.ts[0m:[93m254[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m254[0m     await this.prisma.user.update({
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m84[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'backupConfig' does not exist on type 'PrismaService'.
+
+[7m84[0m     const row = await this.prisma.backupConfig.findUnique({
+[7m  [0m [91m                                  ~~~~~~~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m177[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m177[0m       this.prisma.backup.findFirst({
+[7m   [0m [91m                  ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m181[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m181[0m       this.prisma.backup.findFirst({ orderBy: { createdAt: 'desc' } }),
+[7m   [0m [91m                  ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m207[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m207[0m     return this.prisma.backup.findMany({
+[7m   [0m [91m                       ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m251[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'backupConfig' does not exist on type 'PrismaService'.
+
+[7m251[0m     await this.prisma.backupConfig.upsert({
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m293[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'backupConfig' does not exist on type 'PrismaService'.
+
+[7m293[0m     await this.prisma.backupConfig.deleteMany({ where: { id: CONFIG_ID } });
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m319[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m319[0m     const last = await this.prisma.backup.findFirst({
+[7m   [0m [91m                                   ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m343[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m343[0m     const record = await this.prisma.backup.create({
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m439[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m439[0m       const completed = await this.prisma.backup.update({
+[7m   [0m [91m                                          ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m462[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m462[0m       await this.prisma.backup.update({
+[7m   [0m [91m                        ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m485[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m485[0m     const verified = await this.prisma.backup.findMany({
+[7m   [0m [91m                                       ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m511[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m511[0m         await this.prisma.backup.delete({ where: { id: old.id } });
+[7m   [0m [91m                          ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m528[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m528[0m     const record = await this.prisma.backup.findFirst({ where: { id } });
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m627[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'backup' does not exist on type 'PrismaService'.
+
+[7m627[0m     const record = await this.prisma.backup.findFirst({
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/backup/backup.service.ts[0m:[93m752[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m752[0m     const owners = await this.prisma.user.findMany({
+[7m   [0m [91m                                     ~~~~[0m
+[96msrc/common/filters/prisma-exception.filter.ts[0m:[93m11[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m11[0m import { Prisma } from '@prisma/client';
+[7m  [0m [91m         ~~~~~~[0m
+[96msrc/common/filters/prisma-exception.filter.ts[0m:[93m37[0m:[93m15[0m - [91merror[0m[90m TS18046: [0m'exception' is of type 'unknown'.
+
+[7m37[0m       switch (exception.code) {
+[7m  [0m [91m              ~~~~~~~~~[0m
+[96msrc/common/guards/integration-api-key.guard.ts[0m:[93m41[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m41[0m     const key = await this.prisma.integrationApiKey.findUnique({
+[7m  [0m [91m                                  ~~~~~~~~~~~~~~~~~[0m
+[96msrc/common/guards/integration-api-key.guard.ts[0m:[93m69[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m69[0m     this.prisma.integrationApiKey
+[7m  [0m [91m                ~~~~~~~~~~~~~~~~~[0m
+[96msrc/common/guards/staff-api-key.guard.ts[0m:[93m40[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m40[0m     const key = await this.prisma.staffApiKey.findUnique({
+[7m  [0m [91m                                  ~~~~~~~~~~~[0m
+[96msrc/common/guards/staff-api-key.guard.ts[0m:[93m71[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m71[0m     this.prisma.staffApiKey
+[7m  [0m [91m                ~~~~~~~~~~~[0m
+[96msrc/common/services/branch-access.service.ts[0m:[93m15[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m15[0m     const branch = await this.prisma.branch.findFirst({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/common/services/branch-time.service.ts[0m:[93m10[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m10[0m     const branch = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/common/services/branch-time.service.ts[0m:[93m18[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'restaurant' does not exist on type 'PrismaService'.
+
+[7m18[0m     const r = await this.prisma.restaurant.findUnique({
+[7m  [0m [91m                                ~~~~~~~~~~[0m
+[96msrc/integrations/integration-api-keys.service.ts[0m:[93m43[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m43[0m     const activeCount = await this.prisma.integrationApiKey.count({
+[7m  [0m [91m                                          ~~~~~~~~~~~~~~~~~[0m
+[96msrc/integrations/integration-api-keys.service.ts[0m:[93m53[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m53[0m     const key = await this.prisma.integrationApiKey.create({
+[7m  [0m [91m                                  ~~~~~~~~~~~~~~~~~[0m
+[96msrc/integrations/integration-api-keys.service.ts[0m:[93m79[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m79[0m     const keys = await this.prisma.integrationApiKey.findMany({
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~[0m
+[96msrc/integrations/integration-api-keys.service.ts[0m:[93m97[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m97[0m     const key = await this.prisma.integrationApiKey.findFirst({
+[7m  [0m [91m                                  ~~~~~~~~~~~~~~~~~[0m
+[96msrc/integrations/integration-api-keys.service.ts[0m:[93m102[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'integrationApiKey' does not exist on type 'PrismaService'.
+
+[7m102[0m       await this.prisma.integrationApiKey.update({
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m46[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m46[0m     const branch = await this.prisma.branch.findFirst({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.branch.findMany({
+[7m  [0m [91m                       ~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m69[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m69[0m     const categories = await this.prisma.menuCategory.findMany({
+[7m  [0m [91m                                         ~~~~~~~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m104[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m104[0m     const existing = await this.prisma.customer.findFirst({
+[7m   [0m [91m                                       ~~~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m108[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m108[0m       ? await this.prisma.customer.update({
+[7m   [0m [91m                          ~~~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m112[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m112[0m       : await this.prisma.customer.create({
+[7m   [0m [91m                          ~~~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m121[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m121[0m       await this.prisma.userBranch.findFirst({
+[7m   [0m [91m                        ~~~~~~~~~~[0m
+[96msrc/integrations/integrations.service.ts[0m:[93m187[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m187[0m     const reservation = await this.prisma.reservation.findFirst({
+[7m   [0m [91m                                          ~~~~~~~~~~~[0m
+[96msrc/integrations/staff-api-keys.service.ts[0m:[93m36[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m36[0m     const activeCount = await this.prisma.staffApiKey.count({
+[7m  [0m [91m                                          ~~~~~~~~~~~[0m
+[96msrc/integrations/staff-api-keys.service.ts[0m:[93m46[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m46[0m     const key = await this.prisma.staffApiKey.create({
+[7m  [0m [91m                                  ~~~~~~~~~~~[0m
+[96msrc/integrations/staff-api-keys.service.ts[0m:[93m62[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m62[0m     const keys = await this.prisma.staffApiKey.findMany({
+[7m  [0m [91m                                   ~~~~~~~~~~~[0m
+[96msrc/integrations/staff-api-keys.service.ts[0m:[93m77[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m77[0m     const key = await this.prisma.staffApiKey.findUnique({ where: { id } });
+[7m  [0m [91m                                  ~~~~~~~~~~~[0m
+[96msrc/integrations/staff-api-keys.service.ts[0m:[93m83[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'staffApiKey' does not exist on type 'PrismaService'.
+
+[7m83[0m       await this.prisma.staffApiKey.update({
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/mcp/mcp-tools.builder.ts[0m:[93m287[0m:[93m31[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m287[0m             await this.prisma.branch.findMany({
+[7m   [0m [91m                              ~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m25[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m25[0m     return this.prisma.expense.findMany({
+[7m  [0m [91m                       ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m33[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m33[0m     return this.prisma.expense.create({
+[7m  [0m [91m                       ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m47[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m47[0m     const expense = await this.prisma.expense.findFirst({
+[7m  [0m [91m                                      ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m51[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'cashClosing' does not exist on type 'PrismaService'.
+
+[7m51[0m     const closed = await this.prisma.cashClosing.findUnique({
+[7m  [0m [91m                                     ~~~~~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m60[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m60[0m     await this.prisma.expense.delete({ where: { id } });
+[7m  [0m [91m                      ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m71[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'payment' does not exist on type 'PrismaService'.
+
+[7m71[0m       this.prisma.payment.aggregate({
+[7m  [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m79[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'refund' does not exist on type 'PrismaService'.
+
+[7m79[0m       this.prisma.refund.aggregate({
+[7m  [0m [91m                  ~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m87[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m87[0m       this.prisma.expense.aggregate({
+[7m  [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m110[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'cashClosing' does not exist on type 'PrismaService'.
+
+[7m110[0m     const existing = await this.prisma.cashClosing.findUnique({
+[7m   [0m [91m                                       ~~~~~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m124[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'cashClosing' does not exist on type 'PrismaService'.
+
+[7m124[0m     return this.prisma.cashClosing.create({
+[7m   [0m [91m                       ~~~~~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m141[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'cashClosing' does not exist on type 'PrismaService'.
+
+[7m141[0m     return this.prisma.cashClosing.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m156[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m156[0m       this.prisma.order.aggregate({
+[7m   [0m [91m                  ~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m161[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'refund' does not exist on type 'PrismaService'.
+
+[7m161[0m       this.prisma.refund.aggregate({
+[7m   [0m [91m                  ~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m165[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m165[0m       this.prisma.expense.groupBy({
+[7m   [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m171[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m171[0m       this.prisma.payrollRun.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m217[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m217[0m     const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                     ~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m251[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m251[0m     const branches = await this.prisma.branch.findMany({
+[7m   [0m [91m                                       ~~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m259[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m259[0m           this.prisma.order.aggregate({
+[7m   [0m [91m                      ~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m268[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m268[0m           this.prisma.order.count({
+[7m   [0m [91m                      ~~~~~[0m
+[96msrc/modules/accounting/accounting.service.ts[0m:[93m271[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m271[0m           this.prisma.ingredient.findMany({
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m118[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'budget' does not exist on type 'PrismaService'.
+
+[7m118[0m     return this.prisma.budget.upsert({
+[7m   [0m [91m                       ~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m128[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'budget' does not exist on type 'PrismaService'.
+
+[7m128[0m     const b = await this.prisma.budget.findFirst({ where: { id, branchId } });
+[7m   [0m [91m                                ~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m130[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'budget' does not exist on type 'PrismaService'.
+
+[7m130[0m     await this.prisma.budget.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m142[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'budget' does not exist on type 'PrismaService'.
+
+[7m142[0m       this.prisma.budget.findMany({
+[7m   [0m [91m                  ~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m146[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m146[0m       this.prisma.expense.groupBy({
+[7m   [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m194[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m194[0m     const res = await this.prisma.bankTransaction.createMany({
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m218[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m218[0m     const txs = await this.prisma.bankTransaction.findMany({
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m225[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m225[0m         await this.prisma.bankTransaction.findMany({
+[7m   [0m [91m                          ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m231[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m231[0m     const expenses = await this.prisma.expense.findMany({
+[7m   [0m [91m                                       ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m252[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m252[0m       await this.prisma.bankTransaction.update({
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m273[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m273[0m     const txs = await this.prisma.bankTransaction.findMany({
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m280[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m280[0m       ? await this.prisma.expense.findMany({
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m321[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m321[0m     const t = await this.prisma.bankTransaction.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m325[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m325[0m     return this.prisma.bankTransaction.update({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m333[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m333[0m     const t = await this.prisma.bankTransaction.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m338[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m338[0m       await this.prisma.bankTransaction.findMany({
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m344[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m344[0m     return this.prisma.expense.findMany({
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m360[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m360[0m       this.prisma.bankTransaction.findFirst({ where: { id, branchId } }),
+[7m   [0m [91m                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m361[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m361[0m       this.prisma.expense.findFirst({ where: { id: expenseId, branchId } }),
+[7m   [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m365[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m365[0m     const used = await this.prisma.bankTransaction.findFirst({
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m369[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'bankTransaction' does not exist on type 'PrismaService'.
+
+[7m369[0m     return this.prisma.bankTransaction.update({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m396[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'payment' does not exist on type 'PrismaService'.
+
+[7m396[0m       this.prisma.payment.aggregate({
+[7m   [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m406[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'refund' does not exist on type 'PrismaService'.
+
+[7m406[0m       this.prisma.refund.aggregate({
+[7m   [0m [91m                  ~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m410[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m410[0m       this.prisma.expense.aggregate({
+[7m   [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m414[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierPayment' does not exist on type 'PrismaService'.
+
+[7m414[0m       this.prisma.supplierPayment.aggregate({
+[7m   [0m [91m                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m418[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m418[0m       this.prisma.payrollRun.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m422[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m422[0m       this.prisma.ingredient.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m426[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierInvoice' does not exist on type 'PrismaService'.
+
+[7m426[0m       this.prisma.supplierInvoice.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/accounting/ledger.service.ts[0m:[93m430[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'giftCard' does not exist on type 'PrismaService'.
+
+[7m430[0m       this.prisma.giftCard.findMany({
+[7m   [0m [91m                  ~~~~~~~~[0m
+[96msrc/modules/attendance/attendance.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.attendance.findFirst({
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/attendance/attendance.service.ts[0m:[93m29[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m29[0m     return this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/attendance/attendance.service.ts[0m:[93m45[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m45[0m     const changed = await this.prisma.attendance.updateMany({
+[7m  [0m [91m                                      ~~~~~~~~~~[0m
+[96msrc/modules/attendance/attendance.service.ts[0m:[93m50[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m50[0m     return this.prisma.attendance.findUniqueOrThrow({
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/attendance/attendance.service.ts[0m:[93m64[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m64[0m     return this.prisma.attendance.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/customers/customers.service.ts[0m:[93m10[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m10[0m     return this.prisma.customer.findMany({
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/customers/customers.service.ts[0m:[93m28[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m28[0m     const customer = await this.prisma.customer.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/customers/customers.service.ts[0m:[93m50[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m50[0m     return this.prisma.customer.create({ data: { ...dto, branchId } });
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/customers/customers.service.ts[0m:[93m55[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m55[0m     return this.prisma.customer.update({ where: { id }, data: dto });
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/customers/customers.service.ts[0m:[93m64[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m64[0m     await this.prisma.customer.delete({ where: { id } });
+[7m  [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/customers/customers.service.ts[0m:[93m69[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m69[0m     const customer = await this.prisma.customer.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m10[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m10[0m     const branch = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m32[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m32[0m       this.prisma.order.aggregate({
+[7m  [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m36[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m36[0m       this.prisma.order.count({
+[7m  [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m39[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m39[0m       this.prisma.order.groupBy({
+[7m  [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m44[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m44[0m       this.prisma.table.groupBy({
+[7m  [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m49[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m49[0m       this.prisma.kot.groupBy({
+[7m  [0m [91m                  ~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m57[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m57[0m       this.prisma.order.findMany({
+[7m  [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m113[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m113[0m     const branch = await this.prisma.branch.findUnique({
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m123[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m123[0m       this.prisma.order.findMany({
+[7m   [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m127[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'wasteLog' does not exist on type 'PrismaService'.
+
+[7m127[0m       this.prisma.wasteLog.findMany({
+[7m   [0m [91m                  ~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m173[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m173[0m     const b = await this.prisma.branch.findUniqueOrThrow({
+[7m   [0m [91m                                ~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m190[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m190[0m       this.prisma.attendance.count({ where: { branchId, clockOutAt: null } }),
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m191[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m191[0m       this.prisma.leaveRequest.count({
+[7m   [0m [91m                  ~~~~~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m199[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m199[0m       this.prisma.reservation.count({
+[7m   [0m [91m                  ~~~~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m206[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m206[0m       this.prisma.order.count({
+[7m   [0m [91m                  ~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m209[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m209[0m       this.prisma.ingredient.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m218[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'expense' does not exist on type 'PrismaService'.
+
+[7m218[0m       this.prisma.expense.aggregate({
+[7m   [0m [91m                  ~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m222[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m222[0m       this.prisma.payrollRun.findFirst({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/dashboard/dashboard.service.ts[0m:[93m227[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m227[0m       this.prisma.kot.count({
+[7m   [0m [91m                  ~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.deliveryZone.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m48[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m48[0m     return this.prisma.deliveryZone.create({ data: { ...dto, branchId } });
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m54[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m54[0m     return this.prisma.deliveryZone.update({ where: { id }, data: dto });
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m60[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m60[0m     await this.prisma.deliveryZone.delete({ where: { id } });
+[7m  [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m65[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m65[0m     const zone = await this.prisma.deliveryZone.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m78[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m78[0m     const clash = await this.prisma.deliveryZone.findFirst({
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m95[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m95[0m     const zone = await this.prisma.deliveryZone.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m112[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m112[0m     return this.prisma.order.findMany({
+[7m   [0m [91m                       ~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m129[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m129[0m     return this.prisma.user.findMany({
+[7m   [0m [91m                       ~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m146[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m146[0m     const driver = await this.prisma.user.findFirst({
+[7m   [0m [91m                                     ~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m177[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m177[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/delivery/delivery.service.ts[0m:[93m189[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m189[0m     const updated = await this.prisma.order.update({
+[7m   [0m [91m                                      ~~~~~[0m
+[96msrc/modules/downloads/downloads.service.ts[0m:[93m32[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'downloadStat' does not exist on type 'PrismaService'.
+
+[7m32[0m     await this.prisma.downloadStat.upsert({
+[7m  [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/downloads/downloads.service.ts[0m:[93m41[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'downloadStat' does not exist on type 'PrismaService'.
+
+[7m41[0m     const rows = await this.prisma.downloadStat.findMany({
+[7m  [0m [91m                                   ~~~~~~~~~~~~[0m
+[96msrc/modules/downloads/downloads.service.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2322: [0mType '{ channel: string; count: {}; }[]' is not assignable to type '{ channel: string; count: number; }[]'.
+  Type '{ channel: string; count: {}; }' is not assignable to type '{ channel: string; count: number; }'.
+    Types of property 'count' are incompatible.
+      Type '{}' is not assignable to type 'number'.
+
+[7m48[0m     return Object.keys(DOWNLOAD_CHANNELS).map((channel) => ({
+[7m  [0m [91m    ~~~~~~[0m
+[96msrc/modules/gift-cards/gift-cards.service.ts[0m:[93m7[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m7[0m import type { Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~~[0m
+[96msrc/modules/gift-cards/gift-cards.service.ts[0m:[93m17[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'giftCard' does not exist on type 'PrismaService'.
+
+[7m17[0m     return this.prisma.giftCard.findMany({
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/gift-cards/gift-cards.service.ts[0m:[93m28[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m28[0m       const customer = await this.prisma.customer.findFirst({
+[7m  [0m [91m                                         ~~~~~~~~[0m
+[96msrc/modules/gift-cards/gift-cards.service.ts[0m:[93m39[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'giftCard' does not exist on type 'PrismaService'.
+
+[7m39[0m     return this.prisma.giftCard.create({
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/gift-cards/gift-cards.service.ts[0m:[93m51[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'giftCard' does not exist on type 'PrismaService'.
+
+[7m51[0m     const card = await this.prisma.giftCard.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m27[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m27[0m     const link = await this.prisma.userBranch.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m35[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollLine' does not exist on type 'PrismaService'.
+
+[7m35[0m     return this.prisma.payrollLine.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m52[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollLine' does not exist on type 'PrismaService'.
+
+[7m52[0m     const line = await this.prisma.payrollLine.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m74[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'shift' does not exist on type 'PrismaService'.
+
+[7m74[0m     return this.prisma.shift.findMany({
+[7m  [0m [91m                       ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m97[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'shift' does not exist on type 'PrismaService'.
+
+[7m97[0m     const clash = await this.prisma.shift.findFirst({
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m109[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m109[0m     const onLeave = await this.prisma.leaveRequest.findFirst({
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m121[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'shift' does not exist on type 'PrismaService'.
+
+[7m121[0m     return this.prisma.shift.create({
+[7m   [0m [91m                       ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m128[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'shift' does not exist on type 'PrismaService'.
+
+[7m128[0m     const shift = await this.prisma.shift.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m132[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'shift' does not exist on type 'PrismaService'.
+
+[7m132[0m     await this.prisma.shift.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m140[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m140[0m     return this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m169[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m169[0m     return this.prisma.leaveRequest.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m177[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m177[0m     return this.prisma.leaveRequest.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m198[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m198[0m     const leave = await this.prisma.leaveRequest.findFirst({
+[7m   [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m204[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m204[0m     const changed = await this.prisma.leaveRequest.updateMany({
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m209[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m209[0m     return this.prisma.leaveRequest.findUniqueOrThrow({ where: { id } });
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m215[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m215[0m     const links = await this.prisma.userBranch.findMany({
+[7m   [0m [91m                                    ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m229[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'staffPay' does not exist on type 'PrismaService'.
+
+[7m229[0m     return this.prisma.staffPay.upsert({
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m239[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m239[0m     return this.prisma.payrollRun.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m247[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m247[0m     const run = await this.prisma.payrollRun.findFirst({
+[7m   [0m [91m                                  ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m259[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m259[0m     const overlap = await this.prisma.payrollRun.findFirst({
+[7m   [0m [91m                                      ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m275[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m275[0m     const links = await this.prisma.userBranch.findMany({
+[7m   [0m [91m                                    ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m287[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m287[0m     const records = await this.prisma.attendance.findMany({
+[7m   [0m [91m                                      ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m305[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'leaveRequest' does not exist on type 'PrismaService'.
+
+[7m305[0m     const leaves = await this.prisma.leaveRequest.findMany({
+[7m   [0m [91m                                     ~~~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m324[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m324[0m     const tips = await this.prisma.order.aggregate({
+[7m   [0m [91m                                   ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m344[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m344[0m     return this.prisma.payrollRun.create({
+[7m   [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m361[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m361[0m     return this.prisma.payrollRun.update({
+[7m   [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m373[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'payrollRun' does not exist on type 'PrismaService'.
+
+[7m373[0m     await this.prisma.payrollRun.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m384[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m384[0m       this.prisma.order.groupBy({
+[7m   [0m [91m                  ~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m390[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'attendance' does not exist on type 'PrismaService'.
+
+[7m390[0m       this.prisma.attendance.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m397[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m397[0m       this.prisma.userBranch.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m414[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty '_sum' does not exist on type '{}'.
+
+[7m414[0m         const sales = Number(o?._sum.totalAmount ?? 0);
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m418[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty '_count' does not exist on type '{}'.
+
+[7m418[0m           orders: o?._count._all ?? 0,
+[7m   [0m [91m                     ~~~~~~[0m
+[96msrc/modules/hr/hr.service.ts[0m:[93m420[0m:[93m34[0m - [91merror[0m[90m TS2339: [0mProperty '_sum' does not exist on type '{}'.
+
+[7m420[0m           tips: round2(Number(o?._sum.tipAmount ?? 0)),
+[7m   [0m [91m                                 ~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m6[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m6[0m import type { Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m20[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'goodsReceipt' does not exist on type 'PrismaService'.
+
+[7m20[0m     return this.prisma.goodsReceipt.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m32[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'goodsReceipt' does not exist on type 'PrismaService'.
+
+[7m32[0m     const grn = await this.prisma.goodsReceipt.findFirst({
+[7m  [0m [91m                                  ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m56[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m56[0m     const supplier = await this.prisma.supplier.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m64[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m64[0m       purchaseOrder = await this.prisma.purchaseOrder.findFirst({
+[7m  [0m [91m                                        ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m83[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m83[0m     const ingredients = await this.prisma.ingredient.findMany({
+[7m  [0m [91m                                          ~~~~~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m109[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m109[0m     return this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/goods-receipts.service.ts[0m:[93m243[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'goodsReceipt' does not exist on type 'PrismaService'.
+
+[7m243[0m     const count = await this.prisma.goodsReceipt.count({ where: { branchId } });
+[7m   [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m6[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m6[0m import type { Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m30[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m30[0m     return this.prisma.ingredient.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m37[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m37[0m     const ingredient = await this.prisma.ingredient.findFirst({
+[7m  [0m [91m                                         ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m45[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m45[0m     return this.prisma.ingredient.create({ data: { ...dto, branchId } });
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m54[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m54[0m     return this.prisma.ingredient.update({ where: { id }, data: dto });
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m59[0m:[93m44[0m - [91merror[0m[90m TS2339: [0mProperty 'recipeIngredient' does not exist on type 'PrismaService'.
+
+[7m59[0m     const usedInRecipe = await this.prisma.recipeIngredient.count({
+[7m  [0m [91m                                           ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m67[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m67[0m     await this.prisma.ingredient.delete({ where: { id } });
+[7m  [0m [91m                      ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m81[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m81[0m     return this.prisma.supplier.findMany({
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m88[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m88[0m     const supplier = await this.prisma.supplier.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m96[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m96[0m     return this.prisma.supplier.create({ data: { ...dto, branchId } });
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m105[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m105[0m     return this.prisma.supplier.update({ where: { id }, data: dto });
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m110[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m110[0m     const usedInPo = await this.prisma.purchaseOrder.count({
+[7m   [0m [91m                                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m118[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m118[0m     await this.prisma.supplier.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m130[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'recipeIngredient' does not exist on type 'PrismaService'.
+
+[7m130[0m     const lines = await this.prisma.recipeIngredient.findMany({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m162[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m162[0m       const count = await this.prisma.ingredient.count({
+[7m   [0m [91m                                      ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m172[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m172[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m186[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m186[0m     await this.prisma.menuItem.update({
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m192[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m192[0m       await this.prisma.menuItem.updateMany({
+[7m   [0m [91m                        ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m201[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m201[0m     const item = await this.prisma.menuItem.findFirst({
+[7m   [0m [91m                                   ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m225[0m:[93m44[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m225[0m       const ingredient = await this.prisma.ingredient.findFirst({
+[7m   [0m [91m                                           ~~~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m233[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m233[0m     await this.prisma.menuItem.update({
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m249[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m249[0m     const item = await this.prisma.menuItem.findFirst({
+[7m   [0m [91m                                   ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m367[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m367[0m     const items = await this.prisma.menuItem.findMany({
+[7m   [0m [91m                                    ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m401[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m401[0m       this.prisma.menuItem.count({
+[7m   [0m [91m                  ~~~~~~~~[0m
+[96msrc/modules/inventory/inventory.service.ts[0m:[93m409[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m409[0m       this.prisma.menuItem.count({
+[7m   [0m [91m                  ~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m26[0m     return this.prisma.purchaseOrder.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m38[0m:[93m34[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m38[0m     const po = await this.prisma.purchaseOrder.findFirst({
+[7m  [0m [91m                                 ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m61[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m61[0m     const supplier = await this.prisma.supplier.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m68[0m:[93m47[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m68[0m     const ingredientCount = await this.prisma.ingredient.count({
+[7m  [0m [91m                                              ~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m82[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m82[0m     return this.prisma.purchaseOrder.create({
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m115[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m115[0m     return this.prisma.purchaseOrder.update({
+[7m   [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-orders.service.ts[0m:[93m122[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m122[0m     const count = await this.prisma.purchaseOrder.count({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-requests.service.ts[0m:[93m25[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseRequest' does not exist on type 'PrismaService'.
+
+[7m25[0m     return this.prisma.purchaseRequest.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-requests.service.ts[0m:[93m37[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseRequest' does not exist on type 'PrismaService'.
+
+[7m37[0m     const request = await this.prisma.purchaseRequest.findFirst({
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-requests.service.ts[0m:[93m55[0m:[93m47[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m55[0m     const ingredientCount = await this.prisma.ingredient.count({
+[7m  [0m [91m                                              ~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-requests.service.ts[0m:[93m66[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseRequest' does not exist on type 'PrismaService'.
+
+[7m66[0m     return this.prisma.purchaseRequest.create({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-requests.service.ts[0m:[93m97[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseRequest' does not exist on type 'PrismaService'.
+
+[7m97[0m     return this.prisma.purchaseRequest.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/purchase-requests.service.ts[0m:[93m110[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseRequest' does not exist on type 'PrismaService'.
+
+[7m110[0m     const count = await this.prisma.purchaseRequest.count({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/stock.service.ts[0m:[93m6[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m6[0m import type { Prisma, StockMovementType } from '@prisma/client';
+[7m [0m [91m              ~~~~~~[0m
+[96msrc/modules/inventory/stock.service.ts[0m:[93m6[0m:[93m23[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'StockMovementType'.
+
+[7m6[0m import type { Prisma, StockMovementType } from '@prisma/client';
+[7m [0m [91m                      ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/stock.service.ts[0m:[93m24[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'stockMovement' does not exist on type 'PrismaService'.
+
+[7m24[0m     return this.prisma.stockMovement.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/stock.service.ts[0m:[93m33[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'stockBatch' does not exist on type 'PrismaService'.
+
+[7m33[0m     return this.prisma.stockBatch.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/inventory/stock.service.ts[0m:[93m266[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m266[0m     return this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m18[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierInvoice' does not exist on type 'PrismaService'.
+
+[7m18[0m     return this.prisma.supplierInvoice.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m29[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierInvoice' does not exist on type 'PrismaService'.
+
+[7m29[0m     const invoice = await this.prisma.supplierInvoice.findFirst({
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m50[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m50[0m     const supplier = await this.prisma.supplier.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m57[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m57[0m       const po = await this.prisma.purchaseOrder.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m66[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'goodsReceipt' does not exist on type 'PrismaService'.
+
+[7m66[0m       const grn = await this.prisma.goodsReceipt.findFirst({
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m73[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierInvoice' does not exist on type 'PrismaService'.
+
+[7m73[0m     return this.prisma.supplierInvoice.create({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m99[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m99[0m     return this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m148[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierInvoice' does not exist on type 'PrismaService'.
+
+[7m148[0m     return this.prisma.supplierInvoice.update({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m158[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m158[0m     const supplier = await this.prisma.supplier.findFirst({
+[7m   [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m163[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'purchaseOrder' does not exist on type 'PrismaService'.
+
+[7m163[0m     const orders = await this.prisma.purchaseOrder.findMany({
+[7m   [0m [91m                                     ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m173[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'goodsReceipt' does not exist on type 'PrismaService'.
+
+[7m173[0m     const receipts = await this.prisma.goodsReceipt.findMany({
+[7m   [0m [91m                                       ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-invoices.service.ts[0m:[93m202[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierInvoice' does not exist on type 'PrismaService'.
+
+[7m202[0m     const invoices = await this.prisma.supplierInvoice.findMany({
+[7m   [0m [91m                                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m24[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierQuotation' does not exist on type 'PrismaService'.
+
+[7m24[0m     return this.prisma.supplierQuotation.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierQuotation' does not exist on type 'PrismaService'.
+
+[7m38[0m     const quotation = await this.prisma.supplierQuotation.findFirst({
+[7m  [0m [91m                                        ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m53[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierQuotationItem' does not exist on type 'PrismaService'.
+
+[7m53[0m     const items = await this.prisma.supplierQuotationItem.findMany({
+[7m  [0m [91m                                    ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m82[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'supplier' does not exist on type 'PrismaService'.
+
+[7m82[0m     const supplier = await this.prisma.supplier.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m89[0m:[93m47[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m89[0m     const ingredientCount = await this.prisma.ingredient.count({
+[7m  [0m [91m                                              ~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m100[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierQuotation' does not exist on type 'PrismaService'.
+
+[7m100[0m     return this.prisma.supplierQuotation.create({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m128[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierQuotation' does not exist on type 'PrismaService'.
+
+[7m128[0m     return this.prisma.supplierQuotation.update({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/supplier-quotations.service.ts[0m:[93m135[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'supplierQuotation' does not exist on type 'PrismaService'.
+
+[7m135[0m     const count = await this.prisma.supplierQuotation.count({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/transfers.service.ts[0m:[93m14[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'stockTransfer' does not exist on type 'PrismaService'.
+
+[7m14[0m     return this.prisma.stockTransfer.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/transfers.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m26[0m     return this.prisma.branch.findMany({
+[7m  [0m [91m                       ~~~~~~[0m
+[96msrc/modules/inventory/transfers.service.ts[0m:[93m47[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m47[0m       this.prisma.branch.findFirst({
+[7m  [0m [91m                  ~~~~~~[0m
+[96msrc/modules/inventory/transfers.service.ts[0m:[93m51[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m51[0m       this.prisma.branch.findFirst({
+[7m  [0m [91m                  ~~~~~~[0m
+[96msrc/modules/inventory/transfers.service.ts[0m:[93m60[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m60[0m     const source = await this.prisma.ingredient.findFirst({
+[7m  [0m [91m                                     ~~~~~~~~~~[0m
+[96msrc/modules/inventory/transfers.service.ts[0m:[93m66[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m66[0m     return this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/inventory/waste.service.ts[0m:[93m14[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'wasteLog' does not exist on type 'PrismaService'.
+
+[7m14[0m     return this.prisma.wasteLog.findMany({
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/inventory/waste.service.ts[0m:[93m30[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m30[0m     const ingredient = await this.prisma.ingredient.findFirst({
+[7m  [0m [91m                                         ~~~~~~~~~~[0m
+[96msrc/modules/inventory/waste.service.ts[0m:[93m35[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m35[0m     return this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/kds/kds.service.ts[0m:[93m16[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'kitchenStation' does not exist on type 'PrismaService'.
+
+[7m16[0m     return this.prisma.kitchenStation.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/kds/kds.service.ts[0m:[93m27[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m27[0m     return this.prisma.kot.findMany({
+[7m  [0m [91m                       ~~~[0m
+[96msrc/modules/kds/kds.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.order.findMany({
+[7m  [0m [91m                       ~~~~~[0m
+[96msrc/modules/kds/kds.service.ts[0m:[93m86[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m86[0m     const kots = await this.prisma.kot.findMany({
+[7m  [0m [91m                                   ~~~[0m
+[96msrc/modules/kds/kds.service.ts[0m:[93m161[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m161[0m     const kots = await this.prisma.kot.findMany({
+[7m   [0m [91m                                   ~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m7[0m import { Prisma } from '@prisma/client';
+[7m [0m [91m         ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m48[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m48[0m     return this.prisma.coupon.findMany({
+[7m  [0m [91m                       ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m56[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m56[0m     const clash = await this.prisma.coupon.findUnique({
+[7m  [0m [91m                                    ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m60[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m60[0m     return this.prisma.coupon.create({
+[7m  [0m [91m                       ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m78[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m78[0m     return this.prisma.coupon.update({ where: { id }, data: { isActive } });
+[7m  [0m [91m                       ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m83[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m83[0m     await this.prisma.coupon.delete({ where: { id } });
+[7m  [0m [91m                      ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m88[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m88[0m     const c = await this.prisma.coupon.findFirst({ where: { id, branchId } });
+[7m  [0m [91m                                ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m96[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m96[0m     const rows = await this.prisma.promotion.findMany({
+[7m  [0m [91m                                   ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m108[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m108[0m     return this.prisma.promotion.create({
+[7m   [0m [91m                       ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m123[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m123[0m     const p = await this.prisma.promotion.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m127[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m127[0m     return this.prisma.promotion.update({ where: { id }, data: { isActive } });
+[7m   [0m [91m                       ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m131[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m131[0m     const p = await this.prisma.promotion.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m135[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m135[0m     await this.prisma.promotion.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m156[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'promotion' does not exist on type 'PrismaService'.
+
+[7m156[0m     const promos = await this.prisma.promotion.findMany({
+[7m   [0m [91m                                     ~~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m167[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'coupon' does not exist on type 'PrismaService'.
+
+[7m167[0m       const coupon = await this.prisma.coupon.findUnique({
+[7m   [0m [91m                                       ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m216[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m216[0m     return this.prisma.campaign.findMany({
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m223[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m223[0m     return this.prisma.campaign.create({ data: { branchId, ...dto } });
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m227[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m227[0m     const c = await this.prisma.campaign.findFirst({ where: { id, branchId } });
+[7m   [0m [91m                                ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m229[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m229[0m     await this.prisma.campaign.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m235[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m235[0m     const c = await this.prisma.campaign.findFirst({
+[7m   [0m [91m                                ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m240[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m240[0m     const customers = await this.prisma.customer.findMany({
+[7m   [0m [91m                                        ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m312[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m312[0m     const reserved = await this.prisma.campaign.updateMany({
+[7m   [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m332[0m:[93m44[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m332[0m       const restaurant = await this.prisma.branch.findUnique({
+[7m   [0m [91m                                           ~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m365[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m365[0m     await this.prisma.campaign.update({
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/marketing/marketing.service.ts[0m:[93m373[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'campaign' does not exist on type 'PrismaService'.
+
+[7m373[0m     await this.prisma.campaign.update({
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m24[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m24[0m     return this.prisma.menuCategory.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m32[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m32[0m     return this.prisma.menuCategory.create({ data: { ...dto, branchId } });
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m41[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m41[0m     return this.prisma.menuCategory.update({ where: { id }, data: dto });
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m46[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m46[0m     await this.prisma.menuCategory.delete({ where: { id } });
+[7m  [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m51[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m51[0m     const category = await this.prisma.menuCategory.findFirst({
+[7m  [0m [91m                                       ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m60[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'kitchenStation' does not exist on type 'PrismaService'.
+
+[7m60[0m     return this.prisma.kitchenStation.findMany({ where: { branchId } });
+[7m  [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m64[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'kitchenStation' does not exist on type 'PrismaService'.
+
+[7m64[0m     return this.prisma.kitchenStation.create({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m72[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m72[0m     return this.prisma.menuItem.findMany({
+[7m  [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m86[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m86[0m     const item = await this.prisma.menuItem.findFirst({
+[7m  [0m [91m                                   ~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m101[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m101[0m     return this.prisma.menuItem.create({
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m128[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m128[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m169[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'modifierGroup' does not exist on type 'PrismaService'.
+
+[7m169[0m     const count = await this.prisma.modifierGroup.count({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m181[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m181[0m     await this.prisma.menuItem.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m188[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'modifierGroup' does not exist on type 'PrismaService'.
+
+[7m188[0m     return this.prisma.modifierGroup.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m196[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'modifierGroup' does not exist on type 'PrismaService'.
+
+[7m196[0m     return this.prisma.modifierGroup.create({
+[7m   [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m210[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m210[0m     return this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m227[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'modifierGroup' does not exist on type 'PrismaService'.
+
+[7m227[0m     await this.prisma.modifierGroup.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m232[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'modifierGroup' does not exist on type 'PrismaService'.
+
+[7m232[0m     const group = await this.prisma.modifierGroup.findFirst({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m253[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m253[0m       const count = await this.prisma.menuItem.count({
+[7m   [0m [91m                                      ~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m263[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m263[0m     return this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/menu/menu.service.ts[0m:[93m285[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'comboComponent' does not exist on type 'PrismaService'.
+
+[7m285[0m     return this.prisma.comboComponent.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m51[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'equipment' does not exist on type 'PrismaService'.
+
+[7m51[0m       this.prisma.equipment.findMany({
+[7m  [0m [91m                  ~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m73[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'equipment' does not exist on type 'PrismaService'.
+
+[7m73[0m     return this.prisma.equipment.create({
+[7m  [0m [91m                       ~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m88[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'equipment' does not exist on type 'PrismaService'.
+
+[7m88[0m     await this.prisma.equipment.update({
+[7m  [0m [91m                      ~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m99[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m99[0m     const [log] = await this.prisma.$transaction([
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m100[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'serviceLog' does not exist on type 'PrismaService'.
+
+[7m100[0m       this.prisma.serviceLog.create({
+[7m   [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m108[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'equipment' does not exist on type 'PrismaService'.
+
+[7m108[0m       this.prisma.equipment.update({
+[7m   [0m [91m                  ~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m126[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'serviceLog' does not exist on type 'PrismaService'.
+
+[7m126[0m     return this.prisma.serviceLog.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m134[0m:[93m34[0m - [91merror[0m[90m TS2339: [0mProperty 'equipment' does not exist on type 'PrismaService'.
+
+[7m134[0m     const eq = await this.prisma.equipment.findFirst({
+[7m   [0m [91m                                 ~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m144[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'document' does not exist on type 'PrismaService'.
+
+[7m144[0m     return this.prisma.document.findMany({
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m159[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'document' does not exist on type 'PrismaService'.
+
+[7m159[0m     const d = await this.prisma.document.findFirst({
+[7m   [0m [91m                                ~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m193[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'documentFile' does not exist on type 'PrismaService'.
+
+[7m193[0m     const count = await this.prisma.documentFile.count({
+[7m   [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m198[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'documentFile' does not exist on type 'PrismaService'.
+
+[7m198[0m     const created = await this.prisma.documentFile.create({
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m224[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'documentFile' does not exist on type 'PrismaService'.
+
+[7m224[0m     const f = await this.prisma.documentFile.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m233[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'documentFile' does not exist on type 'PrismaService'.
+
+[7m233[0m     await this.prisma.documentFile.delete({ where: { id: fileId } });
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'document' does not exist on type 'PrismaService'.
+
+[7m238[0m     return this.prisma.document.create({ data: { branchId, ...dto } });
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m247[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'document' does not exist on type 'PrismaService'.
+
+[7m247[0m     return this.prisma.document.update({ where: { id }, data: dto });
+[7m   [0m [91m                       ~~~~~~~~[0m
+[96msrc/modules/operations/operations.service.ts[0m:[93m252[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'document' does not exist on type 'PrismaService'.
+
+[7m252[0m     await this.prisma.document.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/orders/kot-print.service.ts[0m:[93m35[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m35[0m     return this.prisma.kot.findMany({
+[7m  [0m [91m                       ~~~[0m
+[96msrc/modules/orders/kot-print.service.ts[0m:[93m66[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m66[0m     const order = await this.prisma.order.findFirst({
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/kot-print.service.ts[0m:[93m102[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m102[0m         const claimed = await this.prisma.kot.updateMany({
+[7m   [0m [91m                                          ~~~[0m
+[96msrc/modules/orders/kot-print.service.ts[0m:[93m153[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m153[0m         await this.prisma.kot.update({
+[7m   [0m [91m                          ~~~[0m
+[96msrc/modules/orders/kot-print.service.ts[0m:[93m169[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m169[0m       const updated = await this.prisma.kot.update({
+[7m   [0m [91m                                        ~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m9[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m9[0m import { Prisma } from '@prisma/client';
+[7m [0m [91m         ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m70[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m70[0m     return this.prisma.order.findMany({
+[7m  [0m [91m                       ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m78[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m78[0m     const order = await this.prisma.order.findFirst({
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m93[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m93[0m     const branch = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m109[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m109[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m131[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m131[0m     const hidden = await this.prisma.menuItem.findMany({
+[7m   [0m [91m                                     ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m147[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m147[0m     const branch = await this.prisma.branch.findUnique({
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m173[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m173[0m       const branch = await this.prisma.branch.findUnique({
+[7m   [0m [91m                                       ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m182[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m182[0m     const menuItems = await this.prisma.menuItem.findMany({
+[7m   [0m [91m                                        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m194[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'modifier' does not exist on type 'PrismaService'.
+
+[7m194[0m     const modifiers = await this.prisma.modifier.findMany({
+[7m   [0m [91m                                        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m214[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m214[0m       const table = await this.prisma.table.findFirst({
+[7m   [0m [91m                                      ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m223[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m223[0m       const customer = await this.prisma.customer.findFirst({
+[7m   [0m [91m                                         ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m235[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Map<unknown, unknown>' is not assignable to parameter of type 'Map<string, Prisma.MenuItemGetPayload<Record<string, never>>>'.
+  Type 'unknown' is not assignable to type 'string'.
+
+[7m235[0m         menuItemById,
+[7m   [0m [91m        ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m261[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m261[0m         (await this.prisma.deliveryZone.count({
+[7m   [0m [91m                           ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m269[0m:[93m7[0m - [91merror[0m[90m TS2739: [0mType '{ deliveryStatus: string; deliveryAddress: string | undefined; deliveryPincode: string | undefined; deliveryPhone: string | undefined; }' is missing the following properties from type 'Pick<Prisma.OrderUncheckedCreateInput, "deliveryStatus" | "deliveryZoneId" | "deliveryFee" | "deliveryAddress" | "deliveryPincode" | "deliveryPhone" | "deliveryEtaAt">': deliveryZoneId, deliveryFee, deliveryEtaAt
+
+[7m269[0m       delivery = {
+[7m   [0m [91m      ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m276[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'deliveryZone' does not exist on type 'PrismaService'.
+
+[7m276[0m         const zone = await this.prisma.deliveryZone.findFirst({
+[7m   [0m [91m                                       ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m293[0m:[93m9[0m - [91merror[0m[90m TS18047: [0m'delivery' is possibly 'null'.
+
+[7m293[0m         delivery.deliveryZoneId = zone.id;
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m294[0m:[93m9[0m - [91merror[0m[90m TS18047: [0m'delivery' is possibly 'null'.
+
+[7m294[0m         delivery.deliveryFee = zone.fee;
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m295[0m:[93m9[0m - [91merror[0m[90m TS18047: [0m'delivery' is possibly 'null'.
+
+[7m295[0m         delivery.deliveryEtaAt = new Date(
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m310[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m310[0m     const order = await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m448[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m448[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m466[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m466[0m     const menuItems = await this.prisma.menuItem.findMany({
+[7m   [0m [91m                                        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m478[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'modifier' does not exist on type 'PrismaService'.
+
+[7m478[0m     const modifiers = await this.prisma.modifier.findMany({
+[7m   [0m [91m                                        ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m489[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Map<unknown, unknown>' is not assignable to parameter of type 'Map<string, Prisma.MenuItemGetPayload<Record<string, never>>>'.
+  Type 'unknown' is not assignable to type 'string'.
+
+[7m489[0m         menuItemById,
+[7m   [0m [91m        ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m496[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m496[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m591[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m591[0m     return this.prisma.order.findMany({
+[7m   [0m [91m                       ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m605[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m605[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m619[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m619[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m696[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m696[0m     const user = await this.prisma.user.findUnique({
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m705[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m705[0m     const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                     ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m723[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m723[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m771[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m771[0m     const branch = await this.prisma.branch.findUnique({
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m825[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m825[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m870[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m870[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m972[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m972[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1009[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m1009[0m       const customer = await this.prisma.customer.findFirst({
+[7m    [0m [91m                                         ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1021[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m1021[0m       const target = await this.prisma.table.findFirst({
+[7m    [0m [91m                                       ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1028[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1028[0m       const occupant = await this.prisma.order.findFirst({
+[7m    [0m [91m                                         ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1039[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m1039[0m     await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1123[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m1123[0m     await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1170[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m1170[0m     await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1210[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1210[0m     const order = await this.prisma.order.findFirst({
+[7m    [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1286[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m1286[0m     const branch = await this.prisma.branch.findUniqueOrThrow({
+[7m    [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1328[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1328[0m     const order = await this.prisma.order.findFirst({
+[7m    [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1440[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1440[0m     const order = await this.prisma.order.findFirst({
+[7m    [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1464[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m1464[0m     const branch = await this.prisma.branch.findUniqueOrThrow({
+[7m    [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1476[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m1476[0m       const customer = await this.prisma.customer.findFirst({
+[7m    [0m [91m                                         ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1499[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m1499[0m       await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                        ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1690[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1690[0m     const updated = await this.prisma.order.findUniqueOrThrow({
+[7m    [0m [91m                                      ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1767[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1767[0m     const updated = await this.prisma.order.findFirstOrThrow({
+[7m    [0m [91m                                      ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1801[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1801[0m     const order = await this.prisma.order.findFirst({
+[7m    [0m [91m                                    ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1809[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m1809[0m     const refund = await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                                     ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1861[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'stockReturns' does not exist on type '{}'.
+
+[7m1861[0m           const alreadyReturned = item.stockReturns.reduce(
+[7m    [0m [91m                                       ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1865[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'quantity' does not exist on type '{}'.
+
+[7m1865[0m           if (ret.quantity > item.quantity - alreadyReturned) {
+[7m    [0m [91m                                  ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1867[0m:[93m55[0m - [91merror[0m[90m TS2339: [0mProperty 'nameSnapshot' does not exist on type '{}'.
+
+[7m1867[0m               `Cannot return ${ret.quantity} x ${item.nameSnapshot} — only ${item.quantity - alreadyReturned} left to return`,
+[7m    [0m [91m                                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1867[0m:[93m83[0m - [91merror[0m[90m TS2339: [0mProperty 'quantity' does not exist on type '{}'.
+
+[7m1867[0m               `Cannot return ${ret.quantity} x ${item.nameSnapshot} — only ${item.quantity - alreadyReturned} left to return`,
+[7m    [0m [91m                                                                                  ~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1872[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'id' does not exist on type '{}'.
+
+[7m1872[0m               orderItemId: item.id,
+[7m    [0m [91m                                ~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1877[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty 'stockReturns' does not exist on type '{}'.
+
+[7m1877[0m           item.stockReturns.push({ quantity: ret.quantity } as never);
+[7m    [0m [91m               ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1878[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItemId' does not exist on type '{}'.
+
+[7m1878[0m           lines.push({ menuItemId: item.menuItemId, quantity: ret.quantity });
+[7m    [0m [91m                                        ~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1930[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1930[0m       this.prisma.order.findFirst({
+[7m    [0m [91m                  ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1934[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m1934[0m       this.prisma.order.findFirst({
+[7m    [0m [91m                  ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m1946[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m1946[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2117[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItemModifierGroup' does not exist on type 'PrismaService'.
+
+[7m2117[0m     const links = await this.prisma.menuItemModifierGroup.findMany({
+[7m    [0m [91m                                    ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2169[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m2169[0m     const due = await this.prisma.order.findMany({
+[7m    [0m [91m                                  ~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2181[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m2181[0m       await this.prisma.$transaction((tx) =>
+[7m    [0m [91m                        ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2225[0m:[93m41[0m - [91merror[0m[90m TS2345: [0mArgument of type '{} | null' is not assignable to parameter of type 'string | null'.
+  Type '{}' is not assignable to type 'string'.
+
+[7m2225[0m       const bucket = itemsByStation.get(stationId) ?? [];
+[7m    [0m [91m                                        ~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2227[0m:[93m26[0m - [91merror[0m[90m TS2345: [0mArgument of type '{} | null' is not assignable to parameter of type 'string | null'.
+  Type '{}' is not assignable to type 'string'.
+
+[7m2227[0m       itemsByStation.set(stationId, bucket);
+[7m    [0m [91m                         ~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2268[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m2268[0m     const kot = await this.prisma.kot.findFirst({
+[7m    [0m [91m                                  ~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2294[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m2294[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2382[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m2382[0m     const kot = await this.prisma.kot.findFirst({
+[7m    [0m [91m                                  ~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2435[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m2435[0m     await this.prisma.$transaction(async (tx) => {
+[7m    [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2528[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m2528[0m     return this.prisma.kot.findUniqueOrThrow({ where: { id: kotId } });
+[7m    [0m [91m                       ~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2532[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m2532[0m     const kot = await this.prisma.kot.findFirst({
+[7m    [0m [91m                                  ~~~[0m
+[96msrc/modules/orders/orders.service.ts[0m:[93m2537[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'kot' does not exist on type 'PrismaService'.
+
+[7m2537[0m     const updated = await this.prisma.kot.update({
+[7m    [0m [91m                                      ~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m10[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m10[0m import { Prisma } from '@prisma/client';
+[7m  [0m [91m         ~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m34[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m34[0m     const branch = await this.prisma.branch.findFirst({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m68[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'customerAccount' does not exist on type 'PrismaService'.
+
+[7m68[0m       const account = await this.prisma.customerAccount.create({
+[7m  [0m [91m                                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m95[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'customerAccount' does not exist on type 'PrismaService'.
+
+[7m95[0m     const account = await this.prisma.customerAccount.findUnique({
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m108[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'customerSession' does not exist on type 'PrismaService'.
+
+[7m108[0m     await this.prisma.customerSession.deleteMany({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m111[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'customerSession' does not exist on type 'PrismaService'.
+
+[7m111[0m     await this.prisma.customerSession.create({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m124[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'customerSession' does not exist on type 'PrismaService'.
+
+[7m124[0m     const session = await this.prisma.customerSession.findUnique({
+[7m   [0m [91m                                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m138[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'customerSession' does not exist on type 'PrismaService'.
+
+[7m138[0m       await this.prisma.customerSession.deleteMany({
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m153[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m153[0m     return this.prisma.order.findMany({
+[7m   [0m [91m                       ~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m177[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m177[0m       this.prisma.order.findFirst({
+[7m   [0m [91m                  ~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m183[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m183[0m     const actor = await this.prisma.userBranch.findFirst({
+[7m   [0m [91m                                    ~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m226[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m226[0m     return this.prisma.reservation.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~[0m
+[96msrc/modules/public/guest.service.ts[0m:[93m259[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m259[0m     const booking = await this.prisma.reservation.findFirst({
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m8[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m8[0m import { Prisma } from '@prisma/client';
+[7m [0m [91m         ~~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m36[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m36[0m     const branch = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m120[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m120[0m     return this.prisma.order.findFirst({
+[7m   [0m [91m                       ~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m132[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m132[0m     const found = await this.prisma.menuItem.findMany({
+[7m   [0m [91m                                    ~~~~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m143[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'isActive' does not exist on type '{}'.
+
+[7m143[0m       return !m || !m.isActive || !m.category.isActive;
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m143[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'category' does not exist on type '{}'.
+
+[7m143[0m       return !m || !m.isActive || !m.category.isActive;
+[7m   [0m [91m                                     ~~~~~~~~[0m
+[96msrc/modules/public/public-kiosk.service.ts[0m:[93m159[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m159[0m     const link = await this.prisma.userBranch.findFirst({
+[7m   [0m [91m                                   ~~~~~~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m18[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m18[0m     const table = await this.prisma.table.findUnique({
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m39[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'menuCategory' does not exist on type 'PrismaService'.
+
+[7m39[0m     return this.prisma.menuCategory.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m94[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m94[0m     const openOrder = await this.prisma.order.findFirst({
+[7m  [0m [91m                                        ~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m112[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'userBranch' does not exist on type 'PrismaService'.
+
+[7m112[0m         await this.prisma.userBranch.findFirst({
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m139[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m139[0m     const order = await this.prisma.order.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m157[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'tableRequest' does not exist on type 'PrismaService'.
+
+[7m157[0m     const requests = await this.prisma.tableRequest.findMany({
+[7m   [0m [91m                                       ~~~~~~~~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m168[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'tableRequest' does not exist on type 'PrismaService'.
+
+[7m168[0m     const existing = await this.prisma.tableRequest.findFirst({
+[7m   [0m [91m                                       ~~~~~~~~~~~~[0m
+[96msrc/modules/public/public-menu.service.ts[0m:[93m173[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'tableRequest' does not exist on type 'PrismaService'.
+
+[7m173[0m     const request = await this.prisma.tableRequest.create({
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'ReportFrequency'.
+
+[7m8[0m import type { ReportFrequency, ReportSchedule } from '@prisma/client';
+[7m [0m [91m              ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m8[0m:[93m32[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'ReportSchedule'.
+
+[7m8[0m import type { ReportFrequency, ReportSchedule } from '@prisma/client';
+[7m [0m [91m                               ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m66[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m66[0m     return this.prisma.reportSchedule.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m90[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m90[0m     return this.prisma.reportSchedule.create({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m97[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m97[0m     return this.prisma.reportSchedule.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m105[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m105[0m     await this.prisma.reportSchedule.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m110[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m110[0m     const s = await this.prisma.reportSchedule.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m144[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m144[0m     await this.prisma.reportSchedule.update({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m180[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m180[0m       const schedules = await this.prisma.reportSchedule.findMany({
+[7m   [0m [91m                                          ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/report-schedules.service.ts[0m:[93m198[0m:[93m29[0m - [91merror[0m[90m TS2339: [0mProperty 'reportSchedule' does not exist on type 'PrismaService'.
+
+[7m198[0m           await this.prisma.reportSchedule.update({
+[7m   [0m [91m                            ~~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m126[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m126[0m         const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                         ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m182[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'orderItem' does not exist on type 'PrismaService'.
+
+[7m182[0m           this.prisma.orderItem.groupBy({
+[7m   [0m [91m                      ~~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m190[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m190[0m           this.prisma.menuItem.findMany({
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m206[0m:[93m34[0m - [91merror[0m[90m TS2339: [0mProperty '_sum' does not exist on type '{}'.
+
+[7m206[0m             qty: sold.get(m.id)?._sum.quantity ?? 0,
+[7m   [0m [91m                                 ~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m207[0m:[93m52[0m - [91merror[0m[90m TS2339: [0mProperty '_sum' does not exist on type '{}'.
+
+[7m207[0m             revenue: round2(Number(sold.get(m.id)?._sum.lineTotal ?? 0)),
+[7m   [0m [91m                                                   ~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m223[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'orderItem' does not exist on type 'PrismaService'.
+
+[7m223[0m         const lines = await this.prisma.orderItem.findMany({
+[7m   [0m [91m                                        ~~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m251[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'payment' does not exist on type 'PrismaService'.
+
+[7m251[0m         const g = await this.prisma.payment.groupBy({
+[7m   [0m [91m                                    ~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m268[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m268[0m         const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                         ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m318[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m318[0m         const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                         ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m350[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'menuItem' does not exist on type 'PrismaService'.
+
+[7m350[0m           this.prisma.menuItem.findMany({
+[7m   [0m [91m                      ~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m364[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'orderItem' does not exist on type 'PrismaService'.
+
+[7m364[0m           this.prisma.orderItem.groupBy({
+[7m   [0m [91m                      ~~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m393[0m:[93m39[0m - [91merror[0m[90m TS2363: [0mThe right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+
+[7m393[0m               round2((price - cost) * units),
+[7m   [0m [91m                                      ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m412[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m412[0m         const g = await this.prisma.order.groupBy({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m425[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'customer' does not exist on type 'PrismaService'.
+
+[7m425[0m         const people = await this.prisma.customer.findMany({
+[7m   [0m [91m                                         ~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m435[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'name' does not exist on type '{}'.
+
+[7m435[0m               p?.name ?? '(no name)',
+[7m   [0m [91m                 ~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m436[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'phone' does not exist on type '{}'.
+
+[7m436[0m               p?.phone,
+[7m   [0m [91m                 ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m439[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'loyaltyPoints' does not exist on type '{}'.
+
+[7m439[0m               p?.loyaltyPoints ?? 0,
+[7m   [0m [91m                 ~~~~~~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m446[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m446[0m         const inRange = await this.prisma.order.findMany({
+[7m   [0m [91m                                          ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m456[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m456[0m         const earlier = await this.prisma.order.findMany({
+[7m   [0m [91m                                          ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m492[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m492[0m         const g = await this.prisma.order.groupBy({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m498[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m498[0m         const users = await this.prisma.user.findMany({
+[7m   [0m [91m                                        ~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m521[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m521[0m         const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                         ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m551[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m551[0m         const g = await this.prisma.reservation.groupBy({
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m564[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m564[0m         const orders = await this.prisma.order.findMany({
+[7m   [0m [91m                                         ~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m606[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'wasteLog' does not exist on type 'PrismaService'.
+
+[7m606[0m         const logs = await this.prisma.wasteLog.findMany({
+[7m   [0m [91m                                       ~~~~~~~~[0m
+[96msrc/modules/reports/reports.service.ts[0m:[93m627[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'ingredient' does not exist on type 'PrismaService'.
+
+[7m627[0m         const ing = await this.prisma.ingredient.findMany({
+[7m   [0m [91m                                      ~~~~~~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.reservation.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m62[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m62[0m       const table = await this.prisma.table.findFirst({
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m79[0m:[93m29[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m79[0m           await this.prisma.branch.findUnique({
+[7m  [0m [91m                            ~~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m86[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m86[0m     const created = await this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m190[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m190[0m     const tables = await this.prisma.table.findMany({
+[7m   [0m [91m                                     ~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m211[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'reservation' does not exist on type 'PrismaService'.
+
+[7m211[0m     const reservation = await this.prisma.reservation.findFirst({
+[7m   [0m [91m                                          ~~~~~~~~~~~[0m
+[96msrc/modules/reservations/reservations.service.ts[0m:[93m216[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m216[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/restaurants/branches.controller.ts[0m:[93m23[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m23[0m     return this.prisma.branch.findMany({
+[7m  [0m [91m                       ~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m23[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'restaurant' does not exist on type 'PrismaService'.
+
+[7m23[0m     const restaurant = await this.prisma.restaurant.findUnique({
+[7m  [0m [91m                                         ~~~~~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m26[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m26[0m     const branch = await this.prisma.branch.findFirst({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'restaurant' does not exist on type 'PrismaService'.
+
+[7m40[0m     const updated = await this.prisma.restaurant.update({
+[7m  [0m [91m                                      ~~~~~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m59[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m59[0m       const current = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                        ~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m73[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m73[0m       const current = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                        ~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m94[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m94[0m     const updated = await this.prisma.branch.update({
+[7m  [0m [91m                                      ~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m118[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m118[0m     const branch = await this.prisma.branch.findUnique({
+[7m   [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/settings/settings.service.ts[0m:[93m129[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m129[0m     await this.prisma.branch.update({
+[7m   [0m [91m                      ~~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m28[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'floor' does not exist on type 'PrismaService'.
+
+[7m28[0m     return this.prisma.floor.findMany({
+[7m  [0m [91m                       ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'floor' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.floor.create({ data: { ...dto, branchId } });
+[7m  [0m [91m                       ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m45[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'floor' does not exist on type 'PrismaService'.
+
+[7m45[0m     return this.prisma.floor.update({ where: { id }, data: dto });
+[7m  [0m [91m                       ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m50[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m50[0m     const table = await this.prisma.table.create({ data: dto });
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m68[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m68[0m     const existing = await this.prisma.table.findMany({
+[7m  [0m [91m                                       ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m79[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m79[0m     const tables = await this.prisma.$transaction(
+[7m  [0m [91m                                     ~~~~~~~~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m81[0m:[93m21[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m81[0m         this.prisma.table.create({
+[7m  [0m [91m                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m102[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m102[0m     const table = await this.prisma.table.update({ where: { id }, data: dto });
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m108[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m108[0m     const owned = await this.prisma.table.findMany({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m118[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m118[0m     const results = await this.prisma.$transaction(
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m120[0m:[93m21[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m120[0m         this.prisma.table.update({ where: { id }, data: rest }),
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m138[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'order' does not exist on type 'PrismaService'.
+
+[7m138[0m       const open = await this.prisma.order.findFirst({
+[7m   [0m [91m                                     ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m148[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m148[0m     const table = await this.prisma.table.update({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m162[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m162[0m     await this.prisma.table.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m168[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m168[0m     const table = await this.prisma.table.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m176[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m176[0m     return this.prisma.table.update({ where: { id }, data: { qrToken } });
+[7m   [0m [91m                       ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m180[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'floor' does not exist on type 'PrismaService'.
+
+[7m180[0m     const floor = await this.prisma.floor.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m187[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m187[0m     const table = await this.prisma.table.findFirst({
+[7m   [0m [91m                                    ~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m195[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tableRequest' does not exist on type 'PrismaService'.
+
+[7m195[0m     return this.prisma.tableRequest.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m203[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'tableRequest' does not exist on type 'PrismaService'.
+
+[7m203[0m     const request = await this.prisma.tableRequest.findFirst({
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/tables/tables.service.ts[0m:[93m207[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'tableRequest' does not exist on type 'PrismaService'.
+
+[7m207[0m     const updated = await this.prisma.tableRequest.update({
+[7m   [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m8[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m8[0m import { Prisma } from '@prisma/client';
+[7m [0m [91m         ~~~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m33[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m33[0m     return this.prisma.user.findMany({
+[7m  [0m [91m                       ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m41[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m41[0m     return this.prisma.role.findMany({
+[7m  [0m [91m                       ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m52[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m52[0m       const existing = await this.prisma.user.findFirst({
+[7m  [0m [91m                                         ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m63[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m63[0m     const user = await this.prisma.user.create({
+[7m  [0m [91m                                   ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m95[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m95[0m     const existing = await this.prisma.user.findFirst({
+[7m  [0m [91m                                       ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m107[0m:[93m51[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m107[0m       const otherActiveOwners = await this.prisma.user.count({
+[7m   [0m [91m                                                  ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m133[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m133[0m     const updated = await this.prisma.user.update({
+[7m   [0m [91m                                      ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m182[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m182[0m     const existing = await this.prisma.user.findFirst({
+[7m   [0m [91m                                       ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m191[0m:[93m51[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m191[0m       const otherActiveOwners = await this.prisma.user.count({
+[7m   [0m [91m                                                  ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m205[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m205[0m       await this.prisma.user.delete({ where: { id } });
+[7m   [0m [91m                        ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m234[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m234[0m     const role = await this.prisma.role.findFirst({
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/modules/users/users.service.ts[0m:[93m246[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m246[0m     const count = await this.prisma.branch.count({
+[7m   [0m [91m                                    ~~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m18[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'waitlistEntry' does not exist on type 'PrismaService'.
+
+[7m18[0m     return this.prisma.waitlistEntry.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m25[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'waitlistEntry' does not exist on type 'PrismaService'.
+
+[7m25[0m     const created = await this.prisma.waitlistEntry.create({
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m35[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'waitlistEntry' does not exist on type 'PrismaService'.
+
+[7m35[0m     const entry = await this.prisma.waitlistEntry.findFirst({
+[7m  [0m [91m                                    ~~~~~~~~~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m45[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'table' does not exist on type 'PrismaService'.
+
+[7m45[0m     const table = await this.prisma.table.findFirst({
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m53[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m53[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m73[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'waitlistEntry' does not exist on type 'PrismaService'.
+
+[7m73[0m     const entry = await this.prisma.waitlistEntry.findFirst({
+[7m  [0m [91m                                    ~~~~~~~~~~~~~[0m
+[96msrc/modules/waitlist/waitlist.service.ts[0m:[93m78[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'waitlistEntry' does not exist on type 'PrismaService'.
+
+[7m78[0m     const updated = await this.prisma.waitlistEntry.update({
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m12[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Prisma'.
+
+[7m12[0m import type { Prisma } from '@prisma/client';
+[7m  [0m [91m              ~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m61[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m61[0m       const branch = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                       ~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m77[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'branch' does not exist on type 'PrismaService'.
+
+[7m77[0m     const branch = await this.prisma.branch.findUnique({
+[7m  [0m [91m                                     ~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m82[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m82[0m     const n = await this.prisma.webhookEndpoint.count({
+[7m  [0m [91m                                ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m93[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m93[0m     const endpoints = await this.prisma.webhookEndpoint.findMany({
+[7m  [0m [91m                                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m103[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m103[0m     await this.prisma.webhookDelivery.createMany({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m111[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m111[0m     return this.prisma.webhookEndpoint.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m132[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m132[0m     const row = await this.prisma.webhookEndpoint.create({
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m176[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m176[0m     const e = await this.prisma.webhookEndpoint.findFirst({
+[7m   [0m [91m                                ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m185[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m185[0m     await this.prisma.webhookEndpoint.update({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m194[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookEndpoint' does not exist on type 'PrismaService'.
+
+[7m194[0m     await this.prisma.webhookEndpoint.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m200[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m200[0m     return this.prisma.webhookDelivery.findMany({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m220[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m220[0m     const row = await this.prisma.webhookDelivery.create({
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m232[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m232[0m     return this.prisma.webhookDelivery.findUniqueOrThrow({
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m248[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m248[0m       const due = await this.prisma.webhookDelivery.findMany({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m263[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m263[0m     await this.prisma.webhookDelivery.deleteMany({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m270[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m270[0m     const claimed = await this.prisma.webhookDelivery.updateMany({
+[7m   [0m [91m                                      ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m283[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m283[0m     const d = await this.prisma.webhookDelivery.findUniqueOrThrow({
+[7m   [0m [91m                                ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m316[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m316[0m       await this.prisma.webhookDelivery.update({
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/webhooks/webhooks.service.ts[0m:[93m328[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'webhookDelivery' does not exist on type 'PrismaService'.
+
+[7m328[0m     await this.prisma.webhookDelivery.update({
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m59[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m59[0m     const recipients = await this.prisma.user.findMany({
+[7m  [0m [91m                                         ~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m71[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m71[0m     await this.prisma.notification.createMany({
+[7m  [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m91[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m91[0m     await this.prisma.notification.create({
+[7m  [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m114[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m114[0m       this.prisma.notification.findMany({
+[7m   [0m [91m                  ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m120[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m120[0m       this.prisma.notification.count({ where }),
+[7m   [0m [91m                  ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m121[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m121[0m       this.prisma.notification.count({
+[7m   [0m [91m                  ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m137[0m:[93m44[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m137[0m     const notification = await this.prisma.notification.findFirst({
+[7m   [0m [91m                                           ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m144[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m144[0m     return this.prisma.notification.update({
+[7m   [0m [91m                       ~~~~~~~~~~~~[0m
+[96msrc/notifications/notifications.service.ts[0m:[93m151[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'notification' does not exist on type 'PrismaService'.
+
+[7m151[0m     await this.prisma.notification.updateMany({
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/permissions/permissions-sync.service.ts[0m:[93m27[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'permission' does not exist on type 'PrismaService'.
+
+[7m27[0m       await this.prisma.permission.upsert({
+[7m  [0m [91m                        ~~~~~~~~~~[0m
+[96msrc/permissions/permissions-sync.service.ts[0m:[93m33[0m:[93m46[0m - [91merror[0m[90m TS2339: [0mProperty 'permission' does not exist on type 'PrismaService'.
+
+[7m33[0m     const allPermissions = await this.prisma.permission.findMany();
+[7m  [0m [91m                                             ~~~~~~~~~~[0m
+[96msrc/permissions/permissions-sync.service.ts[0m:[93m35[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m35[0m     const roles = await this.prisma.role.findMany({
+[7m  [0m [91m                                    ~~~~[0m
+[96msrc/permissions/permissions-sync.service.ts[0m:[93m45[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'rolePermission' does not exist on type 'PrismaService'.
+
+[7m45[0m       await this.prisma.rolePermission.createMany({
+[7m  [0m [91m                        ~~~~~~~~~~~~~~[0m
+[96msrc/prisma/prisma.service.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'PrismaClient'.
+
+[7m2[0m import { PrismaClient } from '@prisma/client';
+[7m [0m [91m         ~~~~~~~~~~~~[0m
+[96msrc/prisma/prisma.service.ts[0m:[93m10[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty '$connect' does not exist on type 'PrismaService'.
+
+[7m10[0m     await this.$connect();
+[7m  [0m [91m               ~~~~~~~~[0m
+[96msrc/prisma/prisma.service.ts[0m:[93m14[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty '$disconnect' does not exist on type 'PrismaService'.
+
+[7m14[0m     await this.$disconnect();
+[7m  [0m [91m               ~~~~~~~~~~~[0m
+[96msrc/realtime/realtime.gateway.ts[0m:[93m62[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m62[0m       const user = await this.prisma.user.findUnique({
+[7m  [0m [91m                                     ~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m38[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m38[0m     return this.prisma.role.findMany({
+[7m  [0m [91m                       ~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m50[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m50[0m     const role = await this.prisma.role.create({
+[7m  [0m [91m                                   ~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m90[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty '$transaction' does not exist on type 'PrismaService'.
+
+[7m90[0m     const updated = await this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                                      ~~~~~~~~~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m140[0m:[93m45[0m - [91merror[0m[90m TS2339: [0mProperty 'user' does not exist on type 'PrismaService'.
+
+[7m140[0m     const assignedCount = await this.prisma.user.count({
+[7m   [0m [91m                                            ~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m149[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m149[0m     await this.prisma.role.delete({ where: { id } });
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m163[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'role' does not exist on type 'PrismaService'.
+
+[7m163[0m     const role = await this.prisma.role.findFirst({
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/roles/roles.service.ts[0m:[93m173[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'permission' does not exist on type 'PrismaService'.
+
+[7m173[0m     const found = await this.prisma.permission.findMany({
+[7m   [0m [91m                                    ~~~~~~~~~~[0m
+
+Found 593 error(s).
+
+undefined
+/workspace/scratch/89230eab16a0/fedgix-restaurant-os/apps/backend:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: nest build
